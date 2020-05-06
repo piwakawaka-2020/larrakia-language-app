@@ -94,4 +94,4 @@ TBD
 | english_word | String |
 | category | String |
 | image_url | String |
-
+| audio_url | String |
