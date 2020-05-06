@@ -20,31 +20,31 @@ The technologies in use:
 ## As a user:
 
 ## Landing Page
-- [] I want to be able to see a map of Larrakia country
-- [] I want to be able to click on an icon so that I can enter a game
-- [] I want to be able to interact with a menu burger
+- [ ] I want to be able to see a map of Larrakia country
+- [ ] I want to be able to click on an icon so that I can enter a game
+- [ ] I want to be able to interact with a menu burger
 
 ## Game - Drag-and-drop
-- [] I want to be able to play a drag-and-drop image association game
-- [] I want to be able to be able to drag from 2 images into a box
-- [] I want to be able to see if my answer is correct or incorrect
-- [] I want to be able to see a demo of the game
-- [] I want to see a progress bar to see how far along in the game I am
-- [] I want to be able to see a win page
-- [] I want to be able to go back to the landing page when I am done
+- [ ] I want to be able to play a drag-and-drop image association game
+- [ ] I want to be able to be able to drag from 2 images into a box
+- [ ] I want to be able to see if my answer is correct or incorrect
+- [ ] I want to be able to see a demo of the game
+- [ ] I want to see a progress bar to see how far along in the game I am
+- [ ] I want to be able to see a win page
+- [ ] I want to be able to go back to the landing page when I am done
 
 ## MVP Stretch
 
 ## As a user:
 
 ## Landing Page
-- [] I want to be able to see the names of cities on a map
-- [] I want to be able to see a greyed out version of the icon of a game I have already played
+- [ ] I want to be able to see the names of cities on a map
+- [ ] I want to be able to see a greyed out version of the icon of a game I have already played
 
 ## Game - Memory Game
-- [] I want to be able to flip tiles to match
-- [] I want to be able to see a demo of how to play the game
-- [] I want to be able to see a win page
+- [ ] I want to be able to flip tiles to match
+- [ ] I want to be able to see a demo of how to play the game
+- [ ] I want to be able to see a win page
 
 ## Stretch
 
