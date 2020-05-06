@@ -61,7 +61,6 @@ TBD
  | Menu | View for the menu bar
  | Map | View for the map
  | DragDropGame | View for the drag-and-drop game
- | Game | View for the game itself
  | HowToPlay | View for how to play section
  | Instructions | View for the text instructions of the game
  | Congratulations | View for the win screen
