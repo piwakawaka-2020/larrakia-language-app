@@ -1,4 +1,4 @@
-# GLU - Gulumirrgin Language App
+# Larrakia Language App
 
 ## Introduction
 #
