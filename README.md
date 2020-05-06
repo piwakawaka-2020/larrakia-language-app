@@ -1,7 +1,6 @@
 # Larrakia Language App
 
 ## Introduction
-#
 
 ## Technologies
 
@@ -13,9 +12,9 @@ The technologies in use:
 * [Knex.js](http://knexjs.org/)
 * [Passport.js](http://www.passportjs.org/docs/)
 * [Bootstrap 4](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
+* [React DnD](https://react-dnd.github.io/react-dnd/about)
 
 ## User Stories
-#
 ## MVP
 ## As a user:
 
@@ -46,10 +45,13 @@ The technologies in use:
 - [ ] I want to be able to see a demo of how to play the game
 - [ ] I want to be able to see a win page
 
+## Other
+- [ ] I want to be able to see a loading screen
+
 ## Stretch
 
 ## As a user:
-TDB
+TBD
 
 ## Views (Client Side)
 ## MVP
@@ -65,8 +67,13 @@ TDB
  | Congratulations | View for the win screen
 
 ## Reducers (Client Side)
-
+| name | purpose |
+| --- | --- |
+| wordsList | Store the list of words that are used by the game |
 ## Actions
+| type | data | purpose |
+| --- | --- | --- |
+| RECEIVE_WORDS | words | Retreive words from the database and store in redux |
 
 ## API (Client - Server)
 
@@ -88,4 +95,3 @@ TDB
 | category | String |
 | image_url | String |
 
-## Setup
