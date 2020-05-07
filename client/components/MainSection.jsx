@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 const MainSection = () => {
   return (
@@ -7,10 +7,10 @@ const MainSection = () => {
       <Router>
         <Switch>
           <Route exact path="/">
-            <Link to="/game">BEEP</Link>
+            INSERT MAP COMPONENT HERE
           </Route>
           <Route path="/game">
-            <Link to="/">BOOP</Link>
+            INSERT GAME COMPONENT HERE
           </Route>
         </Switch>
       </Router>
