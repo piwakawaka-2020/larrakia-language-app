@@ -1,24 +1,27 @@
 import React from 'react'
 import { useDrop } from 'react-dnd'
 
-const DropBox = () => {
+const DropBox = ({ word }) => {
     const [{ canDrop, isOver }, drop] = useDrop({
         accept: 'image',
-        drop: () => ({ name: 'DropBox' }),
+        drop: () => ({ name: 'target' }),
         collect: (monitor) => ({
             isOver: monitor.isOver(),
             canDrop: monitor.canDrop(),
         }),
     })
+    
     const isActive = canDrop && isOver
-    let backgroundColor = '#222'
+    console.log(canDrop)
+    let backgroundColor = '#FFFFFF'
     if(isActive) {
-        backgroundColor = 'blue'
+        backgroundColor = '#008000'
     } else if (canDrop) {
-        backgroundColor = 'green'
+        backgroundColor = '#FFFF66'
     }
+
     return (
-        <div ref={drop} style={{backgroundColor }} className="drop-box mx-auto">
+        <div ref={drop} style={{backgroundColor}} className="drop-box mx-auto">
             {isActive ? 'Drop here' : 'Drag here'}
         </div>
     )

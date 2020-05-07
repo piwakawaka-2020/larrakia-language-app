@@ -6,13 +6,18 @@ const style = {
     height: '375px'
 }
 
-const Image =  ({ image, id }) => {
+const Image =  ({ image, word, displayedWord, changeRoundHandler }) => {
     const [{ isDragging }, drag] = useDrag({
-        item: { image, type: 'image' },
+        item: { word, type: 'image' },
         end: (item, monitor) => {
             const dropResult = monitor.getDropResult()
             if (item && dropResult) {
-                alert('You did it')
+                if (item.word === displayedWord) {
+                    alert("Winning!!")
+                    changeRoundHandler()
+                } else {
+                    alert("WRONG!!!")
+                }
             }
         },
         collect: (monitor) => ({
@@ -23,7 +28,7 @@ const Image =  ({ image, id }) => {
     const opacity = isDragging ? 0.4 : 1
     return (
         <div ref={drag} style={{opacity}}>
-            <img src={image} alt=""/>
+            <img src={image} alt={word} />
         </div>
     )
 }
