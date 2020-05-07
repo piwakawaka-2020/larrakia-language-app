@@ -10,55 +10,45 @@ import DropBox from './DropBox'
 
 class DragAndDropGame extends Component {
 
-    state = {
-        words: [
-            {
-                word: "Banimadla",
-                isCorrect: false
-            },
-            {
-                word: "Damabila",
-                isCorrect: false
-            },
-            {
-                word: "Danijarra",
-                isCorrect: false
-            },
-            {
-                word: "Datlawa",
-                isCorrect: false
-            },
-            {
-                word: "Danggalaba",
-                isCorrect: false
-            }
-        ],
-        images: ["https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ-y9timoHekXtKpwoTBAOm9ti0r-AzP6TkCZ1UtgcjdFvwo7xW&usqp=CAU", "https://lh3.googleusercontent.com/proxy/XZipz_CZGRv6vOydUVUn6fcHulzhHwwAlgZr0NjwR183Oi3X9Q3XTBKiUZRyTTRDs3FpAvKEjNo4A37ePglw3fi6-5tdDFYH-YZGY8mmVt-1ykU"]
+    // Var that gives a random ID between 0 and 4
+    getRandomId = () => {
+        return Math.floor(Math.random() * (4 - 0 + 1) + 0)
     }
 
     render() {
-        const { images } = this.state
         const { words } = this.props
+        const idOne = this.getRandomId()
+        let idTwo = this.getRandomId()
+        if(idOne === idTwo) {
+            idTwo = this.getRandomId()
+        }
+
+        const wordOne = words[idOne]
+        const wordTwo = words[idTwo]
+
         return (
-            <div>
+            <div className="container-fluid h-100">
                 {/* Add a HowToPlay component modal(a popup window inside browser) with instructions on how to play game */}
 
-                <div>
-                    <DropBox />
+                <div className="row">
+                    <div className="mx-auto">
+                        <Word key={wordOne.id} word={wordOne.gulumirrginWord} />
+                    </div>
                 </div>
 
-                <div>
-                    {words.map((word) => {
-                        return <Image key={word.id} image={word.image_url} />
-                    })}
+                <div className="row align-items-center h-75">
+                    <div className="col-md">
+                        <Image key={wordOne.id} id={wordOne.id} image={wordOne.image_url} />
+                    </div>
+
+                    <div className="col-md my-auto">
+                        <DropBox />
+                    </div>
+
+                    <div className="col-md">
+                        <Image key={wordTwo.id} id={wordTwo.id} image={wordTwo.image_url} />
+                    </div>
                 </div>
-
-
-                {/* <div>
-                    {words.map((word, index) => {
-                        return <Word key={index} word={word.word} />
-                    })}
-                </div> */}
 
                 {/* Add a ProgressBar component to show how far into the game the user is */}
             </div>

@@ -2,11 +2,11 @@ import React from 'react'
 import { useDrag } from 'react-dnd'
 
 const style = {
-    width: '300px',
-    height: '300px'
+    width: '512px',
+    height: '375px'
 }
 
-const Image =  ({ image }) => {
+const Image =  ({ image, id }) => {
     const [{ isDragging }, drag] = useDrag({
         item: { image, type: 'image' },
         end: (item, monitor) => {
@@ -22,7 +22,7 @@ const Image =  ({ image }) => {
 
     const opacity = isDragging ? 0.4 : 1
     return (
-        <div ref={drag} style={{...style, opacity}}>
+        <div ref={drag} style={{opacity}}>
             <img src={image} alt=""/>
         </div>
     )

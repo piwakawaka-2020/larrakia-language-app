@@ -1,23 +1,6 @@
 import React from 'react'
 import { useDrop } from 'react-dnd'
 
-const style = {
-    height: '12rem',
-    width: '12rem',
-    marginRight: '1.5rem',
-    marginBottom: '1.5rem',
-    color: 'white',
-    padding: '1rem',
-    textAlign: 'center',
-    fontSize: '1rem',
-    lineHeight: 'normal',
-    position: 'fixed',
-    top: '50%',
-    left: '50%',
-    marginTop: '-100px',
-    marginLeft: '-100px'
-}
-
 const DropBox = () => {
     const [{ canDrop, isOver }, drop] = useDrop({
         accept: 'image',
@@ -35,7 +18,7 @@ const DropBox = () => {
         backgroundColor = 'green'
     }
     return (
-        <div ref={drop} style={{ ...style, backgroundColor }}>
+        <div ref={drop} style={{backgroundColor }} className="drop-box mx-auto">
             {isActive ? 'Drop here' : 'Drag here'}
         </div>
     )
