@@ -10,7 +10,7 @@ import 'bootstrap/dist/js/bootstrap.js'
 
 const App = () => {
   return (
-    <div>
+    <div className="app">
       Hello World
       <DndProvider backend={Backend}>
         <DragAndDropGame />
@@ -19,4 +19,4 @@ const App = () => {
   )
 }
 
-export default App
+export default connect()(App)
