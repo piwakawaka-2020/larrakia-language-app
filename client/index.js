@@ -7,18 +7,16 @@ import thunk from 'redux-thunk'
 import reducers from './reducers'
 import App from './components/App'
 
-// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-// const store = createStore(reducers, composeEnhancers(
-//   applyMiddleware(thunk)
-// ))
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const store = createStore(reducers, composeEnhancers(
+  applyMiddleware(thunk)
+))
 
 document.addEventListener('DOMContentLoaded', () => {
   render(
-    // Commented out code is for use of redux
-    // <Provider store={store}>
-    //   <App />
-    // </Provider>,
-    <App />,
+    <Provider store={store}>
+      <App />
+    </Provider>,
     document.getElementById('app')
   )
 })
