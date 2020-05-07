@@ -10,7 +10,7 @@ export function getWords() {
 }
 
 export function getWordById(id) {
-  return request.get(`${baseUrl}/${id}`)
+  return request.get(`${baseUrl}/id/${id}`)
     .then(res => {
       return res.body
     })
