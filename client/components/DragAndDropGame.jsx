@@ -2,7 +2,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-
 //Children Components imports
 import Image from './Image'
 import Word from './Word'
@@ -31,11 +30,13 @@ class DragAndDropGame extends Component {
     }
 
     changeRoundHandler = () => {
-        const newIdOne = getRandomId(4, 0, -1)
-        const newIdTwo = getRandomId(4, 0, idOne)
+        const { words } = this.props
+        console.log(words.length)
+        const newIdOne = getRandomId(words.length, 0, -1)
+        const newIdTwo = getRandomId(words.length, 0, newIdOne)
         this.setState({
-            wordOne: this.props.words[newIdOne],
-            wordTwo: this.props.words[newIdTwo],
+            wordOne: words[newIdOne],
+            wordTwo: words[newIdTwo],
             gameWin: this.state.gameWin + 1
         })
     }
