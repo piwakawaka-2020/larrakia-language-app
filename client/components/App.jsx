@@ -6,10 +6,10 @@ import 'bootstrap/dist/js/bootstrap.js'
 
 const App = () => {
   return (
-    <div>
+    <div className="app">
       Hello World
     </div>
   )
 }
 
-export default App
+export default connect()(App)
