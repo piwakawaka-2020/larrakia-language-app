@@ -1,13 +1,13 @@
 const express = require('express')
 
-const { getWords, getWordsByCategory, getWordById } = require('../db/db')
+const db = require('../db/db')
 
 const router = express.Router()
 
 router.get('/', (req, res) => {
-  getWords()
+  db.getWords()
     .then(words => {
-      res.send(words)
+      res.json(words)
     })
     .catch(err => {
       res.status(500).send('DATABASE ERROR: ' + err.message)
@@ -15,9 +15,9 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:category', (req, res) => {
-  getWordsByCategory(req.params.category)
+  db.getWordsByCategory(req.params.category)
     .then(words => {
-      res.send(words)
+      res.json(words)
     })
     .catch(err => {
       res.status(500).send('DATABASE ERROR: ' + err.message)
@@ -25,11 +25,13 @@ router.get('/:category', (req, res) => {
 })
 
 router.get('/id/:id', (req, res) => {
-  getWordById(req.params.id)
+  db.getWordById(req.params.id)
     .then(word => {
-      res.send(word)
+      res.json(word)
     })
     .catch(err => {
       res.status(500).send('DATABASE ERROR: ' + err.message)
     })
 })
+
+module.exports = router
