@@ -4,7 +4,7 @@ export const SAVE_WORDS = 'SAVE_WORDS'
 export const RECEIVE_WORDS = 'RECEIVE_WORDS'
 
 // This action adds the words to the list of words already in state
-const saveWords = words => {
+export const saveWords = words => {
   return {
     type: SAVE_WORDS,
     words
@@ -12,7 +12,7 @@ const saveWords = words => {
 }
 
 // This action replaces the list of words in state with a new list
-const receiveWords = words => {
+export const receiveWords = words => {
   return {
     type: RECEIVE_WORDS,
     words
