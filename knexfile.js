@@ -42,7 +42,7 @@ module.exports = {
       directory: 'server/db/migrations'
     },
     seeds: {
-      directory: 'tests/server/db/seeds'
+      directory: 'server/db/seeds'
     }
   }
 
