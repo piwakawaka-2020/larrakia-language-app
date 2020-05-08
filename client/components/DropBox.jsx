@@ -10,7 +10,7 @@ const DropBox = ({ word }) => {
             canDrop: monitor.canDrop(),
         }),
     })
-    
+
     const isActive = canDrop && isOver
     console.log(canDrop)
     let backgroundColor = '#FFFFFF'
