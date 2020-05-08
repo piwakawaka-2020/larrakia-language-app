@@ -1,13 +1,14 @@
 //Required imports
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { connect } from 'react-redux'
 import { DndProvider } from 'react-dnd'
 import Backend from 'react-dnd-html5-backend'
 
 //Child component imports
 import DragAndDropGame from './DragAndDropGame'
 
-const MainSection = () => {
+const MainSection = props => {
   return (
     <div>
       <Router>
@@ -16,9 +17,11 @@ const MainSection = () => {
             INSERT MAP COMPONENT HERE
           </Route>
           <Route path="/game">
-            <DndProvider backend={Backend}>
-              <DragAndDropGame />
-            </DndProvider>
+            {props.words.length > 0 ? 
+              <DndProvider backend={Backend}>
+                <DragAndDropGame />
+              </DndProvider> : 
+            <div>Loading...</div> }
           </Route>
         </Switch>
       </Router>
@@ -26,4 +29,10 @@ const MainSection = () => {
   )
 }
 
-export default MainSection
+const mapStateToProps = (state) => {
+  return {
+    words: state.words
+  }
+}
+
+export default connect(mapStateToProps)(MainSection)
