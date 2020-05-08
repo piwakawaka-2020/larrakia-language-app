@@ -33,14 +33,13 @@ class BurgerMenu extends React.Component {
     
                        
         return (
-            <body>
+            // <body>
     <nav>
       <div class="hamburger" onClick={this.clickBurgerHandler}>
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
       </div>
-      
       <ul class="nav-links">
         <li><a href="#">About</a></li>
         <li><a href="#">Larrakia People</a></li>
@@ -48,12 +47,10 @@ class BurgerMenu extends React.Component {
       </ul>
     </nav>
 
-    <section class="landing">
+    /* <section class="landing">
     <h1>Hello World</h1>
-    </section>
+    </section> */
 
-    <script src="app.js"></script>
-  </body>
  
         )
 
