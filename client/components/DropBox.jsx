@@ -12,7 +12,6 @@ const DropBox = ({ word }) => {
     })
 
     const isActive = canDrop && isOver
-    console.log(canDrop)
     let backgroundColor = '#FFFFFF'
     if(isActive) {
         backgroundColor = '#008000'

@@ -17,19 +17,21 @@ class DragAndDropGame extends Component {
     }
 
     componentDidMount() {
+        // Function returns a random ID number
         const getRandomId = (max, min, except) => {
             let randomNum = Math.floor(Math.random() * (max - min + 1) + min)
             return (randomNum === except) ? this.getRandomId(max, min, except) : randomNum
         }
         
-        const idOne = getRandomId(4, 0, -1)
-        const idTwo = getRandomId(4, 0, idOne)
+        //Var contains 2 random IDs for use in game
+        const idOne = getRandomId(this.props.words.length, 0, -1)
+        const idTwo = getRandomId(this.props.words.length, 0, idOne)
 
+        //Set state on game load to have random word objects
         this.setState({
             wordOne: this.props.words[idOne],
             wordTwo: this.props.words[idTwo],
-            gameWin: 0,
-            isLoaded: true
+            gameWin: 0
         })
     }
 
@@ -52,16 +54,14 @@ class DragAndDropGame extends Component {
     render() {
         const { wordOne, wordTwo } = this.state
 
+        //Randomly selects word to learn from random words selected
         const currentWords = [wordOne, wordTwo]
         const randomIndex = this.getRandomIndex(1, 0)
         const displayedWord = currentWords[randomIndex].gulumirrgin_word
 
         return (
             <div className="container-fluid h-100">
-            {this.state.wordOne === {} || this.state.wordTwo === {} ? <div>Loading</div> :
-            
-            
-                // Add a HowToPlay component modal(a popup window inside browser) with instructions on how to play game
+                {/* Add a HowToPlay component modal(a popup window inside browser) with instructions on how to play game */}
                 <div className="container-fluid h-100">
                     <div className="row">
                         <div className="mx-auto">
@@ -85,7 +85,6 @@ class DragAndDropGame extends Component {
 
                 {/* Add a ProgressBar component to show how far into the game the user is */}
                 </div>
-            }
             </div>
         )
     }
