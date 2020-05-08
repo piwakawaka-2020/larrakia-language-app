@@ -28,11 +28,11 @@ exports.seed = function(knex) {
         {gulumirrgin_word: 'Moerrma', english_word: 'Black Plum', category: 'Fruits\'n\'Veg', image_url: '/images/Moerrma.jpg' },
         {gulumirrgin_word: 'Biyarmarrma', english_word: 'Pandanus', category: 'Plants', image_url: '/images/Biyarmarrma.jpg' },
         {gulumirrgin_word: 'Dadbinggwa', english_word: 'Sugarbag(honey)', category: 'Plants', image_url: '/images/Dadbinggwa.jpg' },
-        {gulumirrgin_word: 'Dambilinggwa', english_word: 'Waterlilly', category: 'Plants', image_url: '/images/Dambilinggwa.jpg' },
+        {gulumirrgin_word: 'Dambilinggwa', english_word: 'Waterlilly', category: 'Plants', image_url: '/images/Dambilinggwa.png' },
         {gulumirrgin_word: 'Mayilema', english_word: 'Speargrass', category: 'Plants', image_url: '/images/Mayilema.jpg' },
         {gulumirrgin_word: 'Nyirruck', english_word: 'Dad', category: 'Family', image_url: '/images/Nyirruck.jpg' },
         {gulumirrgin_word: 'Batji', english_word: 'Good', category: 'Phrases', image_url: '/images/BatjiKoala.jpg' },
-        {gulumirrgin_word: 'Ma Muk', english_word: 'See you later', category: 'Phrases', image_url: '/images/MaMuk.jpg' },
+        {gulumirrgin_word: 'Ma Muk', english_word: 'See you later', category: 'Phrases', },
       ])
     })
 }
