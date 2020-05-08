@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
 
 import { fetchWords } from '../actions'
+import MainSection from './MainSection'
 
-class App extends React.Component {
+class App extends Component {
   componentDidMount() {
     this.props.dispatch(fetchWords())
   }
@@ -13,7 +14,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        Hello World
+        <MainSection />
       </div>
     )
   }
