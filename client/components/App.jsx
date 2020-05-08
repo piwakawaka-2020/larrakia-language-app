@@ -3,12 +3,10 @@ import { connect } from 'react-redux'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
 
-import { DndProvider } from 'react-dnd'
-import Backend from 'react-dnd-html5-backend'
+
 
 import { fetchWords } from '../actions'
-
-import DragAndDropGame from './DragAndDropGame'
+import MainSection from './MainSection'
 
 
 class App extends Component {
@@ -30,14 +28,11 @@ class App extends Component {
         {this.props.words.length > 0 ? 
           <div>
             <div className="app">
-              Hello World
-              <DndProvider backend={Backend}>
-                <DragAndDropGame />
-              </DndProvider>
+              <MainSection />
             </div>
           </div> : 
           <div>Loading...</div> }
-      </div>
+        </div>
     )
   }
 }
