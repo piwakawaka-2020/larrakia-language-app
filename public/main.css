@@ -1,0 +1,19 @@
+div .app {
+    height: 90vh;
+}
+
+.drop-box {
+    display: flex;
+    height: 20rem;
+    width: 30rem;
+    margin-right: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: black;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    line-height: normal;
+    border: 5px dotted black;
+    background-color: white;
+}
