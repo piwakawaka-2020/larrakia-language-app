@@ -7,11 +7,6 @@ import Image from './Image'
 import Word from './Word'
 import DropBox from './DropBox'
 
-// Remove these comments when done
-//Change from snake to camel:
-// gulumirrgin_word line 68, line 83, line 91
-// image_url line line 84, line 92
-
 class DragAndDropGame extends Component {
 
     state = {
@@ -66,7 +61,7 @@ class DragAndDropGame extends Component {
         //Randomly selects word to learn from random words selected
         const currentWords = [wordOne, wordTwo]
         const randomIndex = this.getRandomIndex(1, 0)
-        const displayedWord = currentWords[randomIndex].gulumirrgin_word
+        const displayedWord = currentWords[randomIndex].gulumirrginWord
 
         return (
             <div className="container-fluid h-100">
@@ -80,7 +75,7 @@ class DragAndDropGame extends Component {
 
                     <div className="row align-items-center h-75">
                         <div className="col-md">
-                            <Image key={wordOne.id} id={wordOne.id} image={wordOne.image_url} word={wordOne.gulumirrgin_word} displayedWord={displayedWord} changeRoundHandler={this.changeRoundHandler}/>
+                            <Image key={wordOne.id} id={wordOne.id} image={wordOne.imageUrl} word={wordOne.gulumirrginWord} displayedWord={displayedWord} changeRoundHandler={this.changeRoundHandler}/>
                         </div>
 
                         <div className="col-md my-auto">
@@ -88,7 +83,7 @@ class DragAndDropGame extends Component {
                         </div>
 
                         <div className="col-md">
-                            <Image key={wordTwo.id} id={wordTwo.id} image={wordTwo.image_url} word={wordTwo.gulumirrgin_word} displayedWord={displayedWord} changeRoundHandler={this.changeRoundHandler}/>
+                            <Image key={wordTwo.id} id={wordTwo.id} image={wordTwo.imageUrl} word={wordTwo.gulumirrginWord} displayedWord={displayedWord} changeRoundHandler={this.changeRoundHandler}/>
                         </div>
                     </div>
 
