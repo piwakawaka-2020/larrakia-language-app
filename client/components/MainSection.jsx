@@ -7,6 +7,7 @@ import Backend from 'react-dnd-html5-backend'
 
 //Child component imports
 import DragAndDropGame from './DragAndDropGame'
+import Map from './Map'
 
 const MainSection = props => {
   return (
@@ -14,7 +15,7 @@ const MainSection = props => {
       <Router>
         <Switch>
           <Route exact path="/">
-            INSERT MAP COMPONENT HERE
+            <Map />
           </Route>
           <Route path="/game">
             {props.words.length > 0 ? 
