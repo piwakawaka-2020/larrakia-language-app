@@ -17,3 +17,20 @@ div .app {
     border: 5px dotted black;
     background-color: white;
 }
+
+#mapContainer {
+  position: relative;
+}
+
+#mapImage {
+  width: 100%;
+  height: auto;
+}
+
+#button-dragAndDropGame {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  color: white;
+  cursor: pointer;
+}
