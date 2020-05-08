@@ -18,6 +18,17 @@ div .app {
     background-color: white;
 }
 
+ win-screen
+.container-full {
+    height: 100vh;
+}
+
+.center-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
 #mapContainer {
   position: relative;
 }
