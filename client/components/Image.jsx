@@ -11,6 +11,7 @@ const Image =  ({ image, word, displayedWord, changeRoundHandler }) => {
         item: { word, type: 'image' },
         end: (item, monitor) => {
             const dropResult = monitor.getDropResult()
+
             if (item && dropResult) {
                 if (item.word === displayedWord) {
                     alert("Winning!!")

@@ -7,6 +7,10 @@ import Image from './Image'
 import Word from './Word'
 import DropBox from './DropBox'
 
+// Remove these comments when done
+//Change from snake to camel:
+// gulumirrgin_word line 68, line 83, line 91
+// image_url line line 84, line 92
 
 class DragAndDropGame extends Component {
 
@@ -24,8 +28,8 @@ class DragAndDropGame extends Component {
         }
         
         //Var contains 2 random IDs for use in game
-        const idOne = getRandomId(this.props.words.length, 0, -1)
-        const idTwo = getRandomId(this.props.words.length, 0, idOne)
+        const idOne = getRandomId(this.props.words.length - 1, 0, -1)
+        const idTwo = getRandomId(this.props.words.length - 1, 0, idOne)
 
         //Set state on game load to have random word objects
         this.setState({
@@ -35,6 +39,11 @@ class DragAndDropGame extends Component {
         })
     }
 
+    getRandomId = (max, min, except) => {
+        let randomNum = Math.floor(Math.random() * (max - min + 1) + min)
+        return (randomNum === except) ? this.getRandomId(max, min, except) : randomNum
+    }
+
     // Var that gives a random ID between 0 and the length of the database
     getRandomIndex = (max, min) => {
         return Math.floor(Math.random() * (max - min + 1) - min)
@@ -42,8 +51,8 @@ class DragAndDropGame extends Component {
 
     changeRoundHandler = () => {
         const { words } = this.props
-        const newIdOne = getRandomId(words.length, 0, -1)
-        const newIdTwo = getRandomId(words.length, 0, newIdOne)
+        const newIdOne = this.getRandomId(words.length, 0, -1)
+        const newIdTwo = this.getRandomId(words.length, 0, newIdOne)
         this.setState({
             wordOne: words[newIdOne],
             wordTwo: words[newIdTwo],
@@ -71,7 +80,7 @@ class DragAndDropGame extends Component {
 
                     <div className="row align-items-center h-75">
                         <div className="col-md">
-                            <Image key={wordOne.id} id={wordOne.id} image={wordOne.image_url} word={wordOne.gulumirrginWord} displayedWord={displayedWord} changeRoundHandler={this.changeRoundHandler}/>
+                            <Image key={wordOne.id} id={wordOne.id} image={wordOne.image_url} word={wordOne.gulumirrgin_word} displayedWord={displayedWord} changeRoundHandler={this.changeRoundHandler}/>
                         </div>
 
                         <div className="col-md my-auto">
@@ -79,7 +88,7 @@ class DragAndDropGame extends Component {
                         </div>
 
                         <div className="col-md">
-                            <Image key={wordTwo.id} id={wordTwo.id} image={wordTwo.image_url} word={wordTwo.gulumirrginWord} displayedWord={displayedWord} changeRoundHandler={this.changeRoundHandler}/>
+                            <Image key={wordTwo.id} id={wordTwo.id} image={wordTwo.image_url} word={wordTwo.gulumirrgin_word} displayedWord={displayedWord} changeRoundHandler={this.changeRoundHandler}/>
                         </div>
                     </div>
 
