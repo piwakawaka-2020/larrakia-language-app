@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import Image from './Image'
 import Word from './Word'
 import DropBox from './DropBox'
+import ProgressBar from './ProgressBar'
 
 class DragAndDropGame extends Component {
 
@@ -13,6 +14,7 @@ class DragAndDropGame extends Component {
         wordOne: {},
         wordTwo: {},
         gameWin: 0,
+        scoreToWin: 10
     }
 
     componentDidMount() {
@@ -87,7 +89,7 @@ class DragAndDropGame extends Component {
                         </div>
                     </div>
 
-                {/* Add a ProgressBar component to show how far into the game the user is */}
+                    <ProgressBar currentScore={this.state.gameWin} scoreToWin={this.state.scoreToWin}/>
                 </div>
             </div>
         )
