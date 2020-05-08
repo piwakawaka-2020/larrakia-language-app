@@ -1,5 +1,6 @@
 //Require import
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
 
@@ -16,7 +17,7 @@ const WinScreen = () => {
             </div>
             <div className="row">
                 <div className="mx-auto">
-                    <button>Press here to go back to Larrakia</button>
+                    <Link to="/"><button>Press here to go back to Larrakia</button></Link>
                 </div>
             </div>
         </div>
