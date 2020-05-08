@@ -17,3 +17,14 @@ div .app {
     border: 5px dotted black;
     background-color: white;
 }
+
+.container-full {
+    height: 100vh;
+}
+
+.center-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
