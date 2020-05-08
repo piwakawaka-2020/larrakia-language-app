@@ -22,7 +22,7 @@ exports.seed = function(knex) {
         {gulumirrgin_word: 'Milula', english_word: 'Wallabies', category: 'animals', image_url: '/images/Milula.jpg' },
         {gulumirrgin_word: 'Boewitjba', english_word: 'Bush Potato', category: 'Fruits\'n\'Veg', image_url: '/images/Boewitjba.jpg' },
         {gulumirrgin_word: 'Damiyumba', english_word: 'Billy-goat Plum', category: 'Fruits\'n\'Veg', image_url: '/images/Damiyumba.jpg' },
-        {gulumirrgin_word: 'Dundil', english_word: 'Bush Peanut', category: 'Fruits\'n\'Veg', image_url: '/images/Dundil.jpg' },
+        {gulumirrgin_word: 'Dundil', english_word: 'Bush Peanut', category: 'Fruits\'n\'Veg', image_url: '/images/Dundil.png' },
         {gulumirrgin_word: 'Mindilima', english_word: 'Native red apple', category: 'Fruits\'n\'Veg', image_url: '/images/Mindilima.jpg' },
         {gulumirrgin_word: 'Mindimilma', english_word: 'Native pink apple', category: 'Fruits\'n\'Veg', image_url: '/images/Mindimilma.jpg' },
         {gulumirrgin_word: 'Moerrma', english_word: 'Black Plum', category: 'Fruits\'n\'Veg', image_url: '/images/Moerrma.jpg' },
