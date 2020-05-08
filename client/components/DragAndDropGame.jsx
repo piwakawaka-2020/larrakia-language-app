@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import Image from './Image'
 import Word from './Word'
 import DropBox from './DropBox'
+import WinScreen from './WinScreen'
 
 class DragAndDropGame extends Component {
 
@@ -46,8 +47,8 @@ class DragAndDropGame extends Component {
 
     changeRoundHandler = () => {
         const { words } = this.props
-        const newIdOne = this.getRandomId(words.length, 0, -1)
-        const newIdTwo = this.getRandomId(words.length, 0, newIdOne)
+        const newIdOne = this.getRandomId(words.length - 1, 0, -1)
+        const newIdTwo = this.getRandomId(words.length - 1, 0, newIdOne)
         this.setState({
             wordOne: words[newIdOne],
             wordTwo: words[newIdTwo],
@@ -64,9 +65,9 @@ class DragAndDropGame extends Component {
         const displayedWord = currentWords[randomIndex].gulumirrginWord
 
         return (
-            <div className="container-fluid h-100">
-                {/* Add a HowToPlay component modal(a popup window inside browser) with instructions on how to play game */}
-                <div className="container-fluid h-100">
+            <div>
+                {this.state.gameWin < 10 ? 
+                    <div className="container-fluid h-100">
                     <div className="row">
                         <div className="mx-auto">
                             <Word key={wordOne.id} word={displayedWord} />
@@ -88,7 +89,11 @@ class DragAndDropGame extends Component {
                     </div>
 
                 {/* Add a ProgressBar component to show how far into the game the user is */}
+                </div> :
+                <div>
+                    <WinScreen />
                 </div>
+            }
             </div>
         )
     }
