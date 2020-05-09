@@ -8,6 +8,7 @@ import Backend from 'react-dnd-html5-backend'
 //Child component imports
 import DragAndDropGame from './DragAndDropGame'
 import Map from './Map'
+import MemoryGame from './MemoryGame'
 
 const MainSection = props => {
   return (
@@ -17,12 +18,15 @@ const MainSection = props => {
           <Route exact path="/">
             <Map />
           </Route>
-          <Route path="/game">
+          <Route exact path="/game/draganddrop">
             {props.words.length > 0 ? 
               <DndProvider backend={Backend}>
                 <DragAndDropGame />
               </DndProvider> : 
             <div>Loading...</div> }
+          </Route>
+          <Route path="/game/memory">
+            <MemoryGame />
           </Route>
         </Switch>
       </Router>

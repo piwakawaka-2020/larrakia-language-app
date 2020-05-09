@@ -45,3 +45,40 @@ div .app {
   color: white;
   cursor: pointer;
 }
+
+#button-memoryGame {
+  position: absolute;
+  bottom: 20%;
+  right: 20%;
+  color: white;
+  cursor: pointer;
+}
+
+.memoryGame {
+  text-align: center;
+  justify-content: center;
+}
+
+.memoryGameTiles {
+  display: grid;
+  grid-template-columns: 130px 130px 130px 130px;
+  grid-template-rows: 130px 130px 130px 130px;
+  justify-content: center;
+}
+
+.memoryGameTile {
+  border: solid black 1px;
+  border-radius: 10%;
+  padding: 10px;
+  align-items: center;
+  font-size: 80px;
+  font-family: 'Symbola';
+  height: 100px;
+  width: 100px;
+}
+
+.memoryGameTileImage {
+  vertical-align: top;
+  width: 100%;
+  height: 100%;
+}
