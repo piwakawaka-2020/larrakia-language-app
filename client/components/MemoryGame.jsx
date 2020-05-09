@@ -20,7 +20,7 @@ class MemoryGame extends React.Component {
 
   evalMatch (tile1, tile2) {
     const {matchCount} = this.state
-    const isMatch = tile1.value === tile2.value
+    const isMatch = tile1.word === tile2.word
     const updatedTiles = this.state.tiles.map(tile => {
       if (!isMatch && (tile === tile1 || tile === tile2)) {
         tile.isVisible = false

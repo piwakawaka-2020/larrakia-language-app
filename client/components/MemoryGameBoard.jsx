@@ -36,7 +36,7 @@ class MemoryGameBoard extends React.Component {
 
   processPair () {
     const {tile1, tile2} = this.state
-    const isMatch = tile1.value === tile2.value
+    const isMatch = tile1.word === tile2.word
 
     const processSelectedTiles = () => {
       this.setState({
@@ -58,8 +58,9 @@ class MemoryGameBoard extends React.Component {
       {this.props.tiles.map(tile => {
         return <MemoryGameTile
           key={tile.id}
-          info={tile.info}
-          value={tile.value}
+          word={tile.word}
+          image={tile.image}
+          audio={tile.audio}
           isVisible={tile.isVisible} 
           handleClick={() => this.handleClick(tile.id)}
           />

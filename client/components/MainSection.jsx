@@ -18,7 +18,7 @@ const MainSection = props => {
           <Route exact path="/">
             <Map />
           </Route>
-          <Route exact path="/game/draganddrop">
+          <Route path="/game/draganddrop">
             {props.words.length > 0 ? 
               <DndProvider backend={Backend}>
                 <DragAndDropGame />
