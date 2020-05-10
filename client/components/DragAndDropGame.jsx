@@ -9,6 +9,7 @@ import DropBox from './DropBox'
 
 import ProgressBar from './ProgressBar'
 import WinScreen from './WinScreen'
+import SuccessTick from './SuccessTick'
 
 class DragAndDropGame extends Component {
 
@@ -16,7 +17,8 @@ class DragAndDropGame extends Component {
         wordOne: {},
         wordTwo: {},
         gameWin: 0,
-        scoreToWin: 10
+        scoreToWin: 10,
+        changeRound: false
     }
 
     componentDidMount() {
@@ -33,8 +35,7 @@ class DragAndDropGame extends Component {
         //Set state on game load to have random word objects
         this.setState({
             wordOne: this.props.words[idOne],
-            wordTwo: this.props.words[idTwo],
-            gameWin: 0
+            wordTwo: this.props.words[idTwo]
         })
     }
 
@@ -48,6 +49,12 @@ class DragAndDropGame extends Component {
         return Math.floor(Math.random() * (max - min + 1) - min)
     }
 
+    checkmarkHandler = () => {
+        this.setState({
+            changeRound: true
+        })
+    }
+    
     changeRoundHandler = () => {
         const { words } = this.props
         const newIdOne = this.getRandomId(words.length - 1, 0, -1)
@@ -55,7 +62,8 @@ class DragAndDropGame extends Component {
         this.setState({
             wordOne: words[newIdOne],
             wordTwo: words[newIdTwo],
-            gameWin: this.state.gameWin + 1
+            gameWin: this.state.gameWin + 1,
+            changeRound: false
         })
     }
 
@@ -66,7 +74,7 @@ class DragAndDropGame extends Component {
         const currentWords = [wordOne, wordTwo]
         const randomIndex = this.getRandomIndex(1, 0)
         const displayedWord = currentWords[randomIndex].gulumirrginWord
-
+        
         return (
             <div>
                 {this.state.gameWin < 10 ? 
@@ -79,15 +87,16 @@ class DragAndDropGame extends Component {
 
                     <div className="row align-items-center h-75">
                         <div className="col-md">
-                            <Image key={wordOne.id} id={wordOne.id} image={wordOne.imageUrl} word={wordOne.gulumirrginWord} displayedWord={displayedWord} changeRoundHandler={this.changeRoundHandler}/>
+                            <Image key={wordOne.id} id={wordOne.id} image={wordOne.imageUrl} word={wordOne.gulumirrginWord} displayedWord={displayedWord} changeRoundHandler={this.changeRoundHandler} checkmarkHandler={this.checkmarkHandler}/>
                         </div>
 
                         <div className="col-md my-auto">
+                            {this.state.changeRound ? <SuccessTick /> : ''}
                             <DropBox />
                         </div>
 
                         <div className="col-md">
-                            <Image key={wordTwo.id} id={wordTwo.id} image={wordTwo.imageUrl} word={wordTwo.gulumirrginWord} displayedWord={displayedWord} changeRoundHandler={this.changeRoundHandler}/>
+                            <Image key={wordTwo.id} id={wordTwo.id} image={wordTwo.imageUrl} word={wordTwo.gulumirrginWord} displayedWord={displayedWord} changeRoundHandler={this.changeRoundHandler} checkmarkHandler={this.checkmarkHandler}/>
                         </div>
                     </div>
 
