@@ -44,6 +44,8 @@ div .app {
   left: 20%;
   color: white;
   cursor: pointer;
+  width: 100px;
+  height: 100px;
 }
 
 #button-memoryGame {
@@ -52,6 +54,13 @@ div .app {
   right: 20%;
   color: white;
   cursor: pointer;
+  width: 100px;
+  height: 100px;
+}
+
+.button-icon-image {
+  width: 100%;
+  height: 100%;
 }
 
 .memoryGame {
@@ -71,8 +80,6 @@ div .app {
   border-radius: 10%;
   padding: 10px;
   align-items: center;
-  font-size: 80px;
-  font-family: 'Symbola';
   height: 100px;
   width: 100px;
 }
