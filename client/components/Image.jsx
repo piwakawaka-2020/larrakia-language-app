@@ -1,21 +1,17 @@
 import React from 'react'
 import { useDrag } from 'react-dnd'
+import SuccessTick from './SuccessTick'
+import { render } from 'enzyme'
 
-const style = {
-    width: '512px',
-    height: '375px'
-}
-
-const Image =  ({ image, word, displayedWord, changeRoundHandler }) => {
+const Image =  ({ image, word, displayedWord, changeRoundHandler, checkmarkHandler }) => {
     const [{ isDragging }, drag] = useDrag({
         item: { word, type: 'image' },
         end: (item, monitor) => {
             const dropResult = monitor.getDropResult()
-
             if (item && dropResult) {
                 if (item.word === displayedWord) {
-                    alert("Winning!!")
-                    changeRoundHandler()
+                    checkmarkHandler()
+                    setTimeout(changeRoundHandler, 1800)
                 } else {
                     alert("WRONG!!!")
                 }
