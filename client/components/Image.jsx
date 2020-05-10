@@ -3,7 +3,7 @@ import { useDrag } from 'react-dnd'
 import SuccessTick from './SuccessTick'
 import { render } from 'enzyme'
 
-const Image =  ({ image, word, displayedWord, changeRoundHandler, checkmarkHandler }) => {
+const Image =  ({ image, word, displayedWord, changeRoundHandler, checkmarkHandler, failMessageHandler }) => {
     const [{ isDragging }, drag] = useDrag({
         item: { word, type: 'image' },
         end: (item, monitor) => {
@@ -13,7 +13,7 @@ const Image =  ({ image, word, displayedWord, changeRoundHandler, checkmarkHandl
                     checkmarkHandler()
                     setTimeout(changeRoundHandler, 1800)
                 } else {
-                    alert("WRONG!!!")
+                    failMessageHandler()
                 }
             }
         },
