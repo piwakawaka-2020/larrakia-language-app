@@ -1,8 +1,11 @@
 import React from 'react'
+import $ from 'jquery'
 import { Link } from 'react-router-dom';
 
 export class Map extends React.Component {
-
+  componentDidMount() {
+    $('.modal-backdrop').remove()
+  }
 
   render() {
     return (
