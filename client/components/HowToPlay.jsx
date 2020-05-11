@@ -19,7 +19,7 @@ class HowToPlay extends Component {
                                 <span aria-hidden="true">x</span>
                             </button>
                         </div>
-                        <div className="modal-body">
+                        <div className="modal-body modal-body-container">
                             {/* Wrap any tag with <HowToPlay> tags to place info inside the body of modal */}
                             {this.props.children}
                         </div>
