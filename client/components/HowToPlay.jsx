@@ -20,6 +20,7 @@ class HowToPlay extends Component {
                             </button>
                         </div>
                         <div className="modal-body">
+                            {/* Wrap any tag with <HowToPlay> tags to place info inside the body of modal */}
                             {this.props.children}
                         </div>
                         <div className="modal-footer">
