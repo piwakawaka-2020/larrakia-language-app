@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import MemoryGameBoard from './MemoryGameBoard'
 import WinScreen from './WinScreen'
+import Instructions from './Instructions'
 
 const tryAgain = 'No match, try again'
 
@@ -96,14 +97,24 @@ class MemoryGame extends React.Component {
     const hasWon = this.state.matchCount === 8
     return (
       hasWon ? <WinScreen /> :
-      <div className='memoryGame'>
-        <h1>Welcome to the Memory Game</h1>
-        <h2>Match all the tiles to win</h2>
+      <>
+        <div className='memoryGame'>
+          <h1>Welcome to the Memory Game</h1>
+          <h2>Match all the tiles to win</h2>
 
-        <MemoryGameBoard tiles={this.state.tiles} evalMatch={this.evalMatch} />
+          <MemoryGameBoard tiles={this.state.tiles} evalMatch={this.evalMatch} />
 
-        <h5>{!this.state.isMatch && tryAgain}</h5>
-      </div>
+          <h5>{!this.state.isMatch && tryAgain}</h5>
+        </div>
+        <Instructions>
+          <li>Flip a tile any tile</li>
+          <li>Flip another tile and see if it matches</li>
+          <li>If it dose it will stay. Then try and find another pair</li>
+          <li>If it dosen't, The tiles will stay where they are but flip back over so you will need to remeber what they were. Try again.</li>
+          <li>Matche all tiles and you win the game!</li>
+          <li>Good Luck!</li>
+        </Instructions>
+      </>
     )
   }
 }
