@@ -1,6 +1,15 @@
 # Larrakia Language App
 
 ## Introduction
+This is a placeholder for an introduction to the app
+### Members:
+| Name | Role |
+| --- | --- |
+| Laniyuk | Product Owner/Creative Director |
+| Simone | Product Manager |
+| Zac | Git Lead / Deployment Lead |
+| Boyd | Backend Lead |
+| Richard | Frontend Lead |
 
 ## Technologies
 
@@ -19,18 +28,18 @@ The technologies in use:
 ## As a user:
 
 ## Landing Page
-- [ ] I want to be able to see a map of Larrakia country
-- [ ] I want to be able to click on an icon so that I can enter a game
+- [x] I want to be able to see a map of Larrakia country
+- [x] I want to be able to click on an icon so that I can enter a game
 - [ ] I want to be able to interact with a menu burger
 
 ## Game - Drag-and-drop
-- [ ] I want to be able to play a drag-and-drop image association game
-- [ ] I want to be able to be able to drag from 2 images into a box
-- [ ] I want to be able to see if my answer is correct or incorrect
+- [x] I want to be able to play a drag-and-drop image association game
+- [x] I want to be able to be able to drag from 2 images into a box
+- [x] I want to be able to see if my answer is correct or incorrect
 - [ ] I want to be able to see a demo of the game
-- [ ] I want to see a progress bar to see how far along in the game I am
-- [ ] I want to be able to see a win page
-- [ ] I want to be able to go back to the landing page when I am done
+- [x] I want to see a progress bar to see how far along in the game I am
+- [x] I want to be able to see a win page
+- [x] I want to be able to go back to the landing page when I am done
 
 ## MVP Stretch
 
