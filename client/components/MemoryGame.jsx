@@ -99,9 +99,9 @@ class MemoryGame extends React.Component {
       hasWon ? <WinScreen /> :
       <>
         <HowToPlay>
-          {/* <img src="#" alt="memory game demo"/> */}
-          <img src="/gifs/memoryGameHTP.gif" alt=""/>
+          <img src="/gifs/memoryGameHTP.gif" alt="memory game demo gif"/>
         </HowToPlay>
+
         <div className='memoryGame'>
           <h1>Welcome to the Memory Game</h1>
           <h2>Match all the tiles to win</h2>
@@ -110,14 +110,15 @@ class MemoryGame extends React.Component {
 
           <h5>{!this.state.isMatch && tryAgain}</h5>
         </div>
-          <Instructions>
-            <li>Flip a tile any tile</li>
-            <li>Flip another tile and see if it matches</li>
-            <li>If it dose it will stay. Then try and find another pair</li>
-            <li>If it dosen't, The tiles will stay where they are but flip back over so you will need to remeber what they were. Try again.</li>
-            <li>Matche all tiles and you win the game!</li>
-            <li>Good Luck!</li>
-          </Instructions>
+
+        <Instructions>
+          <li>Flip a tile any tile</li>
+          <li>Flip another tile and see if it matches</li>
+          <li>If it dose it will stay. Then try and find another pair</li>
+          <li>If it dosen't, The tiles will stay where they are but flip back over so you will need to remeber what they were. Try again.</li>
+          <li>Matche all tiles and you win the game!</li>
+          <li>Good Luck!</li>
+        </Instructions>
       </>
     )
   }
