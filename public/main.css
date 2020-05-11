@@ -276,3 +276,13 @@ div .app {
   width: 100%;
   height: 100%;
 }
+
+/* CSS Style Rules for Larrakia People Page */
+
+.larrakiaPeople {
+  font-family: 'Neucha';
+  font-size: 20px;
+  text-align: center;
+  background-color: #ebcd73;
+
+}
