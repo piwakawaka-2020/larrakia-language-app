@@ -27,7 +27,7 @@ class BurgerMenu extends React.Component {
         <ul className={"nav-links " + (this.state.isShowing && "open")}>
           <li><a href="#">Gulumirrgin Dictionary for Kids</a></li>
           <li><a href="#">Larrakia People</a></li>
-          <li><a href="#">About </a></li>
+          <li><a href="/about">About </a></li>
         </ul>
       </nav>
     )
