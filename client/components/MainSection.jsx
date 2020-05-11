@@ -8,6 +8,7 @@ import Backend from 'react-dnd-html5-backend'
 //Child component imports
 import DragAndDropGame from './DragAndDropGame'
 import Map from './Map'
+import BurgerMenu from './BurgerMenu'
 import MemoryGame from './MemoryGame'
 
 const MainSection = props => {
@@ -16,6 +17,7 @@ const MainSection = props => {
       <Router>
         <Switch>
           <Route exact path="/">
+            <BurgerMenu />
             <Map />
           </Route>
           <Route path="/game/draganddrop">
