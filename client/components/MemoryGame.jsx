@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import MemoryGameBoard from './MemoryGameBoard'
 import WinScreen from './WinScreen'
 import Instructions from './Instructions'
+import HowToPlay from './HowToPlay'
 
 const tryAgain = 'No match, try again'
 
@@ -97,6 +98,10 @@ class MemoryGame extends React.Component {
     return (
       hasWon ? <WinScreen /> :
       <>
+        <HowToPlay>
+          {/* <img src="#" alt="memory game demo"/> */}
+          <p> I am a place holder</p>
+        </HowToPlay>
         <div className='memoryGame'>
           <h1>Welcome to the Memory Game</h1>
           <h2>Match all the tiles to win</h2>
