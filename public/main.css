@@ -31,14 +31,16 @@ div .app {
 
 /* CSS Style Rules for Checkmark */
 .checkmark {
-  width: 106px;
-  height: 106px;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   display: block;
   stroke-width: 2;
   stroke: #fff;
   stroke-miterlimit: 10;
-  margin: 10% auto;
   box-shadow: inset 0px 0px 0px #7ac142;
   animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
 }
@@ -79,6 +81,24 @@ div .app {
   }
 }
 /* END - CSS Style rules for checkmark - END */
+
+.dnd-image {
+  height: 500px;
+  width: 500px;
+}
+
+.success-fail-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 8rem;
+}
+
+.fail-message {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+}
 
 #mapContainer {
   position: relative;

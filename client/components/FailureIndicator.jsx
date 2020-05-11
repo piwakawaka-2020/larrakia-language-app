@@ -1,8 +1,9 @@
 import React from 'react'
 
-function FailureIndicator() {
+const FailureIndicator = () => {
+
     return (
-        <h3>You've got this! Try Again!</h3>
+        <h3 className='fail-message'>Try Again!</h3>
     )
 }
 
