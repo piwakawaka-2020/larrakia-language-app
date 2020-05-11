@@ -1,15 +1,24 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
-import BurgerMenu from './BurgerMenu'
 
-const App = () => {
-  return (
-    <div>
-       <BurgerMenu />
-    </div>
-  )
+import { fetchWords } from '../actions'
+import MainSection from './MainSection'
+
+class App extends Component {
+  
+  componentDidMount() {
+    this.props.dispatch(fetchWords())
+  }
+
+  render() {
+    return (
+      <div className="app">
+        <MainSection />
+      </div>
+    )
+  }
 }
 
-export default App
+export default connect()(App)
