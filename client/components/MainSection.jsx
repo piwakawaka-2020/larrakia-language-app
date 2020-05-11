@@ -11,6 +11,7 @@ import Map from './Map'
 import LandingMap from './LandingMap'
 import BurgerMenu from './BurgerMenu'
 import MemoryGame from './MemoryGame'
+import About from './About'
 
 const MainSection = props => {
   return (
@@ -19,6 +20,9 @@ const MainSection = props => {
         <Switch>
           <Route exact path="/">
             <LandingMap />
+          </Route>
+          <Route path="/about">
+            <About />
           </Route>
           <Route path="/map">
             <BurgerMenu />
