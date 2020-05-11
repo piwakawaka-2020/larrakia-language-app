@@ -30,7 +30,6 @@ exports.seed = function(knex) {
         {gulumirrgin_word: 'Dadbinggwa', english_word: 'Sugarbag(honey)', category: 'Plants', image_url: '/images/Dadbinggwa.jpg' },
         {gulumirrgin_word: 'Dambilinggwa', english_word: 'Waterlilly', category: 'Plants', image_url: '/images/Dambilinggwa.png' },
         {gulumirrgin_word: 'Mayilema', english_word: 'Speargrass', category: 'Plants', image_url: '/images/Mayilema.png' },
-        {gulumirrgin_word: 'Nyirruck', english_word: 'Dad', category: 'Family', },
         {gulumirrgin_word: 'Batji', english_word: 'Good', category: 'Phrases', image_url: '/images/BatjiKoala.jpg' },
         {gulumirrgin_word: 'Ma Muk', english_word: 'See you later', category: 'Phrases', image_url: '/images/MaMuk.jpg' },
       ])
