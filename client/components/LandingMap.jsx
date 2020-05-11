@@ -11,9 +11,13 @@ export class LandingMap extends React.Component {
                 <Link to="/map">
                     <div id="button-enterApp">
                         {/* Change button to pin or sign */}
-                        <img className="button-image" src='/images/button1.png' />
+                        <img className="button-image" src='/images/orangeButton.png' />
                     </div>
                 </Link>
+                <div id="welcomeBox">
+                        {/* Change button to pin or sign */}
+                        <img className="box-image" src='/images/Capture2.PNG' />
+                    </div>
             </div>
         </>
         )

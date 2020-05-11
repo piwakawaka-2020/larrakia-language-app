@@ -8,7 +8,7 @@ export class Map extends React.Component {
     return (
       <>
       <div id="mapContainer">
-        <img id="mapImage" src='/images/Larrakia.png' />
+        <img id="mapImage" src='/images/LarrakiaCountry.png' />
         <Link to='/game/draganddrop'>
           <div id="button-dragAndDropGame">
             <img className="button-image" src='/images/button1.png' />
