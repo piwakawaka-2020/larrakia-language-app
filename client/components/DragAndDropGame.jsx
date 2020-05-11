@@ -11,7 +11,7 @@ import ProgressBar from './ProgressBar'
 import WinScreen from './WinScreen'
 import SuccessTick from './SuccessTick'
 import FailureIndicator from './FailureIndicator'
-import DndGameInstructions from './DndGameInstructions'
+import DndGameInstructions from './Instructions'
 
 class DragAndDropGame extends Component {
 
@@ -118,7 +118,14 @@ class DragAndDropGame extends Component {
                     </div>
 
                     <ProgressBar currentScore={this.state.gameWin} scoreToWin={this.state.scoreToWin}/>
-                    <DndGameInstructions />
+                    
+                    <Instructions>
+                        <li>Drag the matching image into the word box</li>
+                        <li>If you get it right you go onto the next word</li>
+                        <li>If you don't, you get to try again until you get it right</li>
+                        <li>Get 10 right and you win the game!</li>
+                        <li>Good Luck!</li>
+                    </Instructions>
                 </div> :
                 <div>
                     <WinScreen />
