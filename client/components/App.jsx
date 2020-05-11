@@ -7,6 +7,7 @@ import { fetchWords } from '../actions'
 import MainSection from './MainSection'
 
 class App extends Component {
+  
   componentDidMount() {
     this.props.dispatch(fetchWords())
   }

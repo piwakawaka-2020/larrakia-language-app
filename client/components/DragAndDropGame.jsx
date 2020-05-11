@@ -38,7 +38,6 @@ class DragAndDropGame extends Component {
         //Randomly selects word to learn from random words selected
         const currentWords = [this.props.words[idOne], this.props.words[idTwo]]
         const randomIndex = this.getRandomIndex(1, 0)
-        console.log(currentWords[randomIndex].gulumirrginWord)
 
         //Set state on game load to have random word objects
         this.setState({
@@ -89,7 +88,6 @@ class DragAndDropGame extends Component {
 
     render() {
         const { wordOne, wordTwo } = this.state
-        console.log(this.state.displayedWord)
         return (
             <div>
                 {this.state.gameWin < 10 ? 
@@ -100,13 +98,16 @@ class DragAndDropGame extends Component {
                         </div>
                     </div>
 
-                    <div className="row align-items-center h-75">
+                    <div className="row success-fail-container">
+                        {this.state.changeRound ? <SuccessTick /> : this.state.isIncorrect ? <FailureIndicator /> : ''}
+                    </div>
+
+                    <div className="row align-items-center h-75 dnd-container">
                         <div className="col-md">
                             <Image key={wordOne.id} id={wordOne.id} image={wordOne.imageUrl} word={wordOne.gulumirrginWord} displayedWord={this.state.displayedWord} changeRoundHandler={this.changeRoundHandler} checkmarkHandler={this.checkmarkHandler} failMessageHandler={this.failMessageHandler}/>
                         </div>
 
                         <div className="col-md my-auto">
-                            {this.state.changeRound ? <SuccessTick /> : this.state.isIncorrect ? <FailureIndicator /> : ''}
                             <DropBox />
                         </div>
 
