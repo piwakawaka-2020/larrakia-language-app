@@ -94,7 +94,7 @@ class DragAndDropGame extends Component {
         return (
             <div>
                 <HowToPlay>
-                    <p>This is a test</p>
+                    <img src="/gifs/dndGameHTP.gif" alt=""/>
                 </HowToPlay>
                 {this.state.gameWin < 10 ? 
                     <div className="container-fluid h-100">

@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import MemoryGameBoard from './MemoryGameBoard'
-import startingTiles from '../startingTiles'
 import WinScreen from './WinScreen'
 
 const tryAgain = 'No match, try again'

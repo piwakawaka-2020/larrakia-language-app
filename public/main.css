@@ -85,6 +85,13 @@ div .app {
 .dnd-image {
   height: 500px;
   width: 500px;
+
+  user-drag: none; 
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .col {
@@ -96,7 +103,7 @@ div .app {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 8rem;
+  padding-top: 4rem;
 }
 
 .fail-message {
@@ -112,7 +119,13 @@ div .app {
 }
 
 .main-word {
-  padding-top: 5rem;
+  padding-top: 3rem;
+}
+
+.modal-body-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #mapContainer {
