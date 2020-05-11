@@ -229,8 +229,8 @@ div .app {
 
 #button-dragAndDropGame {
   position: absolute;
-  top: 30%;
-  left: 20%;
+  bottom: 25%;
+  left: 35%;
   cursor: pointer;
   width: 200px;
   height: 200px;
@@ -238,8 +238,8 @@ div .app {
 
 #button-memoryGame {
   position: absolute;
-  bottom: 30%;
-  right: 20%;
+  bottom: 40%;
+  right: 40%;
   cursor: pointer;
   width: 200px;
   height:200px;
@@ -294,10 +294,19 @@ div .app {
 
 #button-enterApp{
   position: absolute;
-  top: 20.5%;
-  left: 33%;
+  top: 22%;
+  left: 35%;
   cursor: pointer;
-  width: 200px;
-  height:200px;
+  width: 100px;
+  height:100px;
+}
+
+#welcomeBox{
+  position: absolute;
+  bottom: 40%;
+  left: 35%;
+  cursor: pointer;
+  width: 100px;
+  height:100px;
 }
 
