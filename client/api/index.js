@@ -1,6 +1,6 @@
 import request from 'superagent'
 
-const baseUrl = 'api/v1/words'
+const baseUrl = '/api/v1/words'
 
 export function getWords() {
   return request.get(baseUrl)

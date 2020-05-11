@@ -8,11 +8,15 @@ export class Map extends React.Component {
     return (
       <>
       <div id="mapContainer">
-        <img id="mapImage" src='/images/map.png' />
-        <Link to='/game'>
+        <img id="mapImage" src='/images/Larrakia.png' />
+        <Link to='/game/draganddrop'>
           <div id="button-dragAndDropGame">
-            {/* <img src='#' /> */}
-            <p>i am a button</p>
+            <img className="button-image" src='/images/button1.png' />
+          </div>
+        </Link>
+        <Link to='/game/memory'>
+          <div id="button-memoryGame">
+            <img className="button-image" src='/images/button2.png' />
           </div>
         </Link>
       </div>

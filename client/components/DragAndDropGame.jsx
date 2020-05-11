@@ -9,14 +9,22 @@ import DropBox from './DropBox'
 
 import ProgressBar from './ProgressBar'
 import WinScreen from './WinScreen'
+import SuccessTick from './SuccessTick'
+import FailureIndicator from './FailureIndicator'
+import Instructions from './Instructions'
+import HowToPlay from './HowToPlay'
+
 
 class DragAndDropGame extends Component {
 
     state = {
+        displayedWord: '',
         wordOne: {},
         wordTwo: {},
         gameWin: 0,
-        scoreToWin: 10
+        scoreToWin: 10,
+        changeRound: false,
+        isIncorrect: false
     }
 
     componentDidMount() {
@@ -30,11 +38,15 @@ class DragAndDropGame extends Component {
         const idOne = getRandomId(this.props.words.length - 1, 0, -1)
         const idTwo = getRandomId(this.props.words.length - 1, 0, idOne)
 
+        //Randomly selects word to learn from random words selected
+        const currentWords = [this.props.words[idOne], this.props.words[idTwo]]
+        const randomIndex = this.getRandomIndex(1, 0)
+
         //Set state on game load to have random word objects
         this.setState({
             wordOne: this.props.words[idOne],
             wordTwo: this.props.words[idTwo],
-            gameWin: 0
+            displayedWord: currentWords[randomIndex].gulumirrginWord
         })
     }
 
@@ -48,51 +60,77 @@ class DragAndDropGame extends Component {
         return Math.floor(Math.random() * (max - min + 1) - min)
     }
 
+    checkmarkHandler = () => {
+        this.setState({
+            changeRound: true
+        })
+    }
+
+    failMessageHandler = () => {
+        this.setState({
+            isIncorrect: true
+        })
+    }
+    
     changeRoundHandler = () => {
         const { words } = this.props
         const newIdOne = this.getRandomId(words.length - 1, 0, -1)
         const newIdTwo = this.getRandomId(words.length - 1, 0, newIdOne)
+        const newWords = [words[newIdOne], words[newIdTwo]]
+        const randomIndex = this.getRandomIndex(1, 0)
+
         this.setState({
+            displayedWord: newWords[randomIndex].gulumirrginWord,
             wordOne: words[newIdOne],
             wordTwo: words[newIdTwo],
-            gameWin: this.state.gameWin + 1
+            gameWin: this.state.gameWin + 1,
+            changeRound: false,
+            isIncorrect: false
         })
     }
 
     render() {
         const { wordOne, wordTwo } = this.state
-
-        //Randomly selects word to learn from random words selected
-        const currentWords = [wordOne, wordTwo]
-        const randomIndex = this.getRandomIndex(1, 0)
-        const displayedWord = currentWords[randomIndex].gulumirrginWord
-
         return (
             <div>
+                <HowToPlay>
+                    <img src="/gifs/dndGameHTP.gif" alt=""/>
+                </HowToPlay>
                 {this.state.gameWin < 10 ? 
                     <div className="container-fluid h-100">
-                    <div className="row">
+                    <div className="row main-word">
                         <div className="mx-auto">
-                            <Word key={wordOne.id} word={displayedWord} />
+                            <Word key={wordOne.id} word={this.state.displayedWord} />
                         </div>
                     </div>
 
-                    <div className="row align-items-center h-75">
-                        <div className="col-md">
-                            <Image key={wordOne.id} id={wordOne.id} image={wordOne.imageUrl} word={wordOne.gulumirrginWord} displayedWord={displayedWord} changeRoundHandler={this.changeRoundHandler}/>
+                    <div className="row success-fail-container">
+                        {this.state.changeRound ? <SuccessTick /> : this.state.isIncorrect ? <FailureIndicator /> : ''}
+                    </div>
+
+                    <div className="row align-items-center justify-content-center h-75 dnd-container">
+                        <div className="col">
+                            <Image key={wordOne.id} id={wordOne.id} image={wordOne.imageUrl} word={wordOne.gulumirrginWord} displayedWord={this.state.displayedWord} changeRoundHandler={this.changeRoundHandler} checkmarkHandler={this.checkmarkHandler} failMessageHandler={this.failMessageHandler}/>
                         </div>
 
-                        <div className="col-md my-auto">
+                        <div className="col my-auto">
                             <DropBox />
                         </div>
 
-                        <div className="col-md">
-                            <Image key={wordTwo.id} id={wordTwo.id} image={wordTwo.imageUrl} word={wordTwo.gulumirrginWord} displayedWord={displayedWord} changeRoundHandler={this.changeRoundHandler}/>
+                        <div className="col">
+                            <Image key={wordTwo.id} id={wordTwo.id} image={wordTwo.imageUrl} word={wordTwo.gulumirrginWord} displayedWord={this.state.displayedWord} changeRoundHandler={this.changeRoundHandler} checkmarkHandler={this.checkmarkHandler} failMessageHandler={this.failMessageHandler}/>
                         </div>
                     </div>
 
                     <ProgressBar currentScore={this.state.gameWin} scoreToWin={this.state.scoreToWin}/>
-                {/* Add a ProgressBar component to show how far into the game the user is */}
+                    
+                    <Instructions>
+                        <li>Drag the matching image into the word box</li>
+                        <li>If you get it right you go onto the next word</li>
+                        <li>If you don't, you get to try again until you get it right</li>
+                        <li>Get 10 right and you win the game!</li>
+                        <li>Good Luck!</li>
+                    </Instructions>
                 </div> :
                 <div>
                     <WinScreen />
