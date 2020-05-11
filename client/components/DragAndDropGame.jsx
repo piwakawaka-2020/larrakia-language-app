@@ -11,6 +11,7 @@ import ProgressBar from './ProgressBar'
 import WinScreen from './WinScreen'
 import SuccessTick from './SuccessTick'
 import FailureIndicator from './FailureIndicator'
+import DndGameInstructions from './DndGameInstructions'
 
 class DragAndDropGame extends Component {
 
@@ -117,7 +118,7 @@ class DragAndDropGame extends Component {
                     </div>
 
                     <ProgressBar currentScore={this.state.gameWin} scoreToWin={this.state.scoreToWin}/>
-                {/* Add a ProgressBar component to show how far into the game the user is */}
+                    <DndGameInstructions />
                 </div> :
                 <div>
                     <WinScreen />
