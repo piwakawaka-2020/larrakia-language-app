@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 export class Map extends React.Component {
   componentDidMount() {
     $('.modal-backdrop').remove()
+    $('.modal-open').removeClass()
   }
 
   render() {
