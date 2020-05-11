@@ -7,7 +7,8 @@ class MemoryGameBoard extends React.Component {
     super(props)
     this.state = {
       tile1: null,
-      tile2: null
+      tile2: null,
+      lastSoundPlayed: (new Date()).getTime()
     }
     this.processPair = this.processPair.bind(this)
     this.handleClick = this.handleClick.bind(this)
@@ -47,10 +48,29 @@ class MemoryGameBoard extends React.Component {
     }
 
     if (isMatch) {
+      tile2.audio != null && this.canPlaySound && this.playSound(tile2)
       processSelectedTiles()
     } else {
       setTimeout(processSelectedTiles, 1000)
     }
+  }
+
+  canPlaySound() {
+    const currentTime = (new Date()).getTime()
+    const threshold = 5000
+    return currentTime > (this.state.lastSoundPlayed + threshold)
+  }
+
+  playSound (tile) {
+    const tileSound = new Audio()
+    // create sound object
+    tileSound.src = tile.audio
+    // call sound object
+    tileSound.play()
+    // change state to time of laste played sound
+    this.setState({
+      lastSoundPlayed: (new Date()).getTime()
+    })
   }
 
   render () {
