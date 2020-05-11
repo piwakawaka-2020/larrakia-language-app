@@ -100,7 +100,7 @@ class MemoryGame extends React.Component {
       <>
         <HowToPlay>
           {/* <img src="#" alt="memory game demo"/> */}
-          <p> I am a place holder</p>
+          <img src="/gifs/memoryGameHTP.gif" alt=""/>
         </HowToPlay>
         <div className='memoryGame'>
           <h1>Welcome to the Memory Game</h1>
