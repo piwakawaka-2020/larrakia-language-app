@@ -12,6 +12,7 @@ import WinScreen from './WinScreen'
 import SuccessTick from './SuccessTick'
 import FailureIndicator from './FailureIndicator'
 import DndGameInstructions from './DndGameInstructions'
+import HowToPlay from './HowToPlay'
 
 class DragAndDropGame extends Component {
 
@@ -91,6 +92,9 @@ class DragAndDropGame extends Component {
         const { wordOne, wordTwo } = this.state
         return (
             <div>
+                <HowToPlay>
+                    <p>This is a test</p>
+                </HowToPlay>
                 {this.state.gameWin < 10 ? 
                     <div className="container-fluid h-100">
                     <div className="row">
