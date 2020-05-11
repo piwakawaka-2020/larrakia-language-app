@@ -1,6 +1,5 @@
 import React from 'react'
 import { useDrag } from 'react-dnd'
-import SuccessTick from './SuccessTick'
 import { render } from 'enzyme'
 
 const Image =  ({ 
@@ -25,9 +24,10 @@ const Image =  ({
     })
 
     const opacity = isDragging ? 0.4 : 1
+    const cursor = isDragging ? 'grabbing' : 'grab'
     return (
-        <div ref={drag} style={{opacity}} className="image-drag">
-            <img src={image} alt={word} className="dnd-image" />
+        <div ref={drag} style={{opacity, cursor}} className="image-drag">
+            <img src={image} alt={word} className="dnd-image"/>
         </div>
     )
 }
