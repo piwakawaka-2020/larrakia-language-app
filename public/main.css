@@ -281,3 +281,22 @@ div .app {
   width: 100%;
   height: 100%;
 }
+
+#landingMapContainer {
+  position: relative;
+}
+
+#landingMapImage {
+  width: 100%;
+  height: 100%;
+}
+
+#button-enterApp{
+  position: absolute;
+  top: 20.5%;
+  left: 33%;
+  cursor: pointer;
+  width: 200px;
+  height:200px;
+}
+
