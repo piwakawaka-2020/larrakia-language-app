@@ -17,7 +17,7 @@ const WinScreen = () => {
             </div>
             <div className="row">
                 <div className="mx-auto">
-                    <Link to="/map"><button>Press here to go back to Larrakia</button></Link>
+                    <Link to="/"><button>Press here to go back to Larrakia</button></Link>
                 </div>
             </div>
         </div>
