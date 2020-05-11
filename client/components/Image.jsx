@@ -26,7 +26,7 @@ const Image =  ({
 
     const opacity = isDragging ? 0.4 : 1
     return (
-        <div ref={drag} style={{opacity}}>
+        <div ref={drag} style={{opacity}} className="image-drag">
             <img src={image} alt={word} className="dnd-image" />
         </div>
     )

@@ -92,7 +92,7 @@ class DragAndDropGame extends Component {
             <div>
                 {this.state.gameWin < 10 ? 
                     <div className="container-fluid h-100">
-                    <div className="row">
+                    <div className="row main-word">
                         <div className="mx-auto">
                             <Word key={wordOne.id} word={this.state.displayedWord} />
                         </div>
@@ -102,16 +102,16 @@ class DragAndDropGame extends Component {
                         {this.state.changeRound ? <SuccessTick /> : this.state.isIncorrect ? <FailureIndicator /> : ''}
                     </div>
 
-                    <div className="row align-items-center h-75 dnd-container">
-                        <div className="col-md">
+                    <div className="row align-items-center justify-content-center h-75 dnd-container">
+                        <div className="col">
                             <Image key={wordOne.id} id={wordOne.id} image={wordOne.imageUrl} word={wordOne.gulumirrginWord} displayedWord={this.state.displayedWord} changeRoundHandler={this.changeRoundHandler} checkmarkHandler={this.checkmarkHandler} failMessageHandler={this.failMessageHandler}/>
                         </div>
 
-                        <div className="col-md my-auto">
+                        <div className="col my-auto">
                             <DropBox />
                         </div>
 
-                        <div className="col-md">
+                        <div className="col">
                             <Image key={wordTwo.id} id={wordTwo.id} image={wordTwo.imageUrl} word={wordTwo.gulumirrginWord} displayedWord={this.state.displayedWord} changeRoundHandler={this.changeRoundHandler} checkmarkHandler={this.checkmarkHandler} failMessageHandler={this.failMessageHandler}/>
                         </div>
                     </div>

@@ -87,6 +87,11 @@ div .app {
   width: 500px;
 }
 
+.col {
+  display: flex;
+  justify-content: center;
+}
+
 .success-fail-container {
   display: flex;
   align-items: center;
@@ -98,6 +103,16 @@ div .app {
   position: absolute;
   padding: 0;
   margin: 0;
+}
+
+.image-drag {
+  width: 500px;
+  height: 500px;
+  margin: 0;
+}
+
+.main-word {
+  padding-top: 5rem;
 }
 
 #mapContainer {
