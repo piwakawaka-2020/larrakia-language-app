@@ -75,7 +75,7 @@ class MemoryGameBoard extends React.Component {
 
   render () {
     return <div className='memoryGameTiles'>
-      {this.props.tiles.map(tile => {
+      {this.props.tiles.map((tile, index) => {
         return <MemoryGameTile
           key={tile.id}
           word={tile.word}

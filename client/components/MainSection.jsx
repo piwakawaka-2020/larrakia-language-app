@@ -26,7 +26,9 @@ const MainSection = props => {
             <div>Loading...</div> }
           </Route>
           <Route path="/game/memory">
-            <MemoryGame />
+            {props.words.length > 0 ? 
+            <MemoryGame />: 
+            <div>Loading...</div> }
           </Route>
         </Switch>
       </Router>
