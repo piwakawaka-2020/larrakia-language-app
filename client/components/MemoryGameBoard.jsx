@@ -48,8 +48,8 @@ class MemoryGameBoard extends React.Component {
     }
 
     if (isMatch) {
-      tile2.audio != null && this.canPlaySound && this.playSound(tile2)
       processSelectedTiles()
+      tile2.audio != null && this.canPlaySound() && this.playSound(tile2)
     } else {
       setTimeout(processSelectedTiles, 1000)
     }
@@ -57,8 +57,8 @@ class MemoryGameBoard extends React.Component {
 
   canPlaySound() {
     const currentTime = (new Date()).getTime()
-    const threshold = 5000
-    return currentTime > (this.state.lastSoundPlayed + threshold)
+    const threshold = 8000
+    return this.props.matchCount < 7 && currentTime > (this.state.lastSoundPlayed + threshold)
   }
 
   playSound (tile) {

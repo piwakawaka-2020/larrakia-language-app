@@ -262,8 +262,8 @@ div .app {
 
 .memoryGameTiles {
   display: grid;
-  grid-template-columns: 130px 130px 130px 130px;
-  grid-template-rows: 130px 130px 130px 130px;
+  grid-template-columns: 170px 170px 170px 170px;
+  grid-template-rows: 170px 170px 170px 170px;
   justify-content: center;
 }
 
@@ -272,8 +272,9 @@ div .app {
   border-radius: 10%;
   padding: 10px;
   align-items: center;
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
+  background-color: #cc9900;
 }
 
 .memoryGameTileImage {
