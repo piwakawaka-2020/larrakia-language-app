@@ -232,8 +232,8 @@ div .app {
 
 #button-dragAndDropGame {
   position: absolute;
-  top: 30%;
-  left: 20%;
+  bottom: 25%;
+  left: 35%;
   cursor: pointer;
   width: 200px;
   height: 200px;
@@ -241,8 +241,8 @@ div .app {
 
 #button-memoryGame {
   position: absolute;
-  bottom: 30%;
-  right: 20%;
+  bottom: 40%;
+  right: 40%;
   cursor: pointer;
   width: 200px;
   height:200px;
@@ -251,6 +251,29 @@ div .app {
 .button-image {
   width: 100%;
   height: 100%;
+  transition: all .2s ease-in-out;
+}
+
+.button-image:hover {
+  transform: scale(1.2);
+}
+
+#map-title {
+  font-family: 'Paytone One', sans-serif;
+  position: absolute;
+  bottom: 25%;
+  right: 2%;
+}
+
+.for-kids {
+  font-family: 'Neucha';
+}
+
+#landing-title {
+  font-family: 'Paytone One', sans-serif;
+  position: absolute;
+  top: 5%;
+  left: 14%;
 }
 
 .memoryGame {
@@ -260,8 +283,8 @@ div .app {
 
 .memoryGameTiles {
   display: grid;
-  grid-template-columns: 130px 130px 130px 130px;
-  grid-template-rows: 130px 130px 130px 130px;
+  grid-template-columns: 170px 170px 170px 170px;
+  grid-template-rows: 170px 170px 170px 170px;
   justify-content: center;
 }
 
@@ -270,8 +293,9 @@ div .app {
   border-radius: 10%;
   padding: 10px;
   align-items: center;
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
+  background-color: #cc9900;
 }
 
 .memoryGameTileImage {
@@ -279,6 +303,7 @@ div .app {
   width: 100%;
   height: 100%;
 }
+<<<<<<< HEAD
 
 /* CSS Style Rules for Larrakia People Page */
 
@@ -299,3 +324,65 @@ div .app {
   width: 200px;
   height:200px;
 }
+||||||| merged common ancestors
+=======
+
+#landingMapContainer {
+  position: relative;
+}
+
+#landingMapImage {
+  width: 100%;
+  height: 100%;
+}
+
+#button-enterApp{
+  position: absolute;
+  top: 22%;
+  left: 35%;
+  cursor: pointer;
+  width: 100px;
+  height:100px;
+}
+
+#welcomeBox{
+  position: absolute;
+  bottom: 40%;
+  left: 35%;
+  cursor: pointer;
+  width: 100px;
+  height:100px;
+}
+
+.team-card {
+  max-width: 540px;
+}
+
+.team-card:hover {
+  transition: 2s;
+  left: 0;
+}
+
+.about-page {
+  background-color: rgb(96, 186, 70);
+  padding: 3rem 0;
+  font-size: 20px;
+}
+
+.about-container {
+  background-color: white;
+}
+
+.rounding {
+  border-radius: 30px;
+}
+
+.wl-icon {
+  width: 200px;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+}
+>>>>>>> d7f8978792037ca148d530265b2c17de109e07db
