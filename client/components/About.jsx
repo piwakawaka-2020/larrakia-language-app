@@ -8,7 +8,7 @@ class About extends Component {
             <div>
                 <BurgerMenu />
                 <div className="about-page">
-                    <div className="container border border-dark about-container rounding">
+                    <div className="container rounding">
                         <div className="icon-container">
                             <img className="wl-icon" src="/images/button1.png" alt="Water Lily"/>
                         </div>
