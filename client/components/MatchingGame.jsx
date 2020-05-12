@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 // import child components
 import Instructions from './Instructions'
 import ProgressBar from './ProgressBar'
+import MatchingGameImage from './MatchingGameImage'
+import MatchingGameWord from './MatchingGameWord'
 
 export class MatchingGame extends React.Component {
 
@@ -12,30 +14,22 @@ export class MatchingGame extends React.Component {
     currentScore: 0,
     scoreToWin: 6,
     imageList: [],
-    wordList: []
+    wordList: [],
+    selectedImage: '',
+    selectedWord: '',
   }
 
   componentDidMount() {
+    // selects word/image lists for game use
     const startingArray = this.filterInvalid(this.props.words)
-    console.log(startingArray);
-    
     const wordList = this.randomiser(startingArray, 6)
-    
-
-    
-    console.log(wordList);
     const imageList = this.randomiser(wordList, 6)
-    
-    console.log(wordList ,imageList);
-    console.log(startingArray);
     this.setState({
       imageList: imageList,
       wordList: wordList
     })
   }
 
-  // http://localhost:3000/game/matching
-  
   // removes any words that do not have corrosponding images
   filterInvalid (array){
     return array.filter(word => word.imageUrl != null)
@@ -60,15 +54,49 @@ export class MatchingGame extends React.Component {
     }
   }
 
+  handleImageClick (id) {
+    console.log(id);
+    this.setState({
+      selectedImage: id,
+    })
+  }
+
+  handleWordClick (id) {
+    console.log(id);
+    this.setState({
+      selectedWord: id,
+    })
+  }
+
   render(){
     return (
       this.state.hasWon ? <WinScreen /> :
       <>
         <h1>Matching Game</h1>
         <div className="row">
-          <div className="col-sm-4">.col-sm-4</div>
-          <div className="col-sm-4">.col-sm-4</div>
-          <div className="col-sm-4">.col-sm-4</div>
+          <div className="col-sm-4">
+            {
+              this.state.imageList.map(listItem => 
+              <MatchingGameImage 
+                key={`i${listItem.id}`} 
+                id={listItem.id} 
+                image={listItem.imageUrl} 
+                click={this.handleImageClick.bind(this)}
+              />)
+            }
+          </div>
+          <div className="col-sm-4"></div>
+          <div className="col-sm-4">
+            {
+              this.state.wordList.map(listItem => 
+              <MatchingGameWord 
+                key={`i${listItem.id}`} 
+                id={listItem.id} 
+                word={listItem.gulumirrginWord} 
+                click={this.handleWordClick.bind(this)}
+              />)
+            }
+          </div>
         </div>
         <ProgressBar currentScore={this.state.currentScore} scoreToWin={this.state.scoreToWin}/>
         <Instructions>
