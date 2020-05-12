@@ -262,7 +262,7 @@ div .app {
   right: 2%;
 }
 
-#for-kids {
+.for-kids {
   font-family: 'Neucha';
 }
 
@@ -328,3 +328,34 @@ div .app {
   height:100px;
 }
 
+.team-card {
+  max-width: 540px;
+}
+
+.team-card:hover {
+  transition: 2s;
+  left: 0;
+}
+
+.about-page {
+  background-color: rgb(96, 186, 70);
+  padding: 3rem 0;
+  font-size: 20px;
+}
+
+.about-container {
+  background-color: white;
+}
+
+.rounding {
+  border-radius: 30px;
+}
+
+.wl-icon {
+  width: 200px;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+}
