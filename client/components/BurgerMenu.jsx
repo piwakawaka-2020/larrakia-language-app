@@ -29,10 +29,6 @@ class BurgerMenu extends React.Component {
           <li><a href= "#">Let's go back Home to Larrakia Country</a></li>
           <li><a href="#">Gulumirrgin Dictionary for Kids</a></li>
           <li> <Link to='/LarrakiaPeople'>Larrakia People</Link></li>
-    
-          
-         
-
           <li><a href="#">About </a></li>
         </ul>
       </nav>
