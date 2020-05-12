@@ -6,24 +6,28 @@ import Instructions from './Instructions'
 import ProgressBar from './ProgressBar'
 import MatchingGameImage from './MatchingGameImage'
 import MatchingGameWord from './MatchingGameWord'
+import WinScreen from './WinScreen'
+import MatchingGameLine from './MatchingGameLine'
+import HowToPlay from './HowToPlay'
 
 export class MatchingGame extends React.Component {
 
   state = {
-    hasWon: false,
     currentScore: 0,
-    scoreToWin: 6,
+    scoreToWin: 3,
     imageList: [],
     wordList: [],
-    selectedImage: '',
-    selectedWord: '',
+    selectedImage: "a",
+    selectedWord: "b",
+    completedPairs: [],
+    lines: []
   }
 
   componentDidMount() {
     // selects word/image lists for game use
     const startingArray = this.filterInvalid(this.props.words)
-    const wordList = this.randomiser(startingArray, 6)
-    const imageList = this.randomiser(wordList, 6)
+    const wordList = this.randomiser(startingArray, 3)
+    const imageList = this.randomiser(wordList, 3)
     this.setState({
       imageList: imageList,
       wordList: wordList
@@ -49,29 +53,71 @@ export class MatchingGame extends React.Component {
       randomisedArray.push(passedArray[randomIndex])
       // exclude item from future instances of the loop
       passedArray.splice(randomIndex, 1)
-      console.log('in loop');
       if(randomisedArray.length == arrayLength) {return randomisedArray}
     }
   }
 
-  handleImageClick (id) {
-    console.log(id);
+  // sets state with selected image id
+  handleImageClick(id) {
     this.setState({
       selectedImage: id,
     })
+    this.evalPair(id, this.state.selectedWord)
   }
 
-  handleWordClick (id) {
-    console.log(id);
+  // sets state with selected word id
+  handleWordClick(id) {
     this.setState({
       selectedWord: id,
+    })
+    this.evalPair(id, this.state.selectedImage)
+  }
+
+  // evaluates if there is a matching pair
+  evalPair(id1, id2) {
+    id1 === id2 && !this.state.completedPairs.includes(id1) && this.updateMatch(id1)
+  }
+
+  // updates state after successfull matching
+  updateMatch(id){
+    this.setState({
+      currentScore: this.state.currentScore + 1,
+      completedPairs: [...this.state.completedPairs, id]
+    }) 
+    this.drawLine(id)
+  }
+
+  // draws line between correct items
+  drawLine(id) {
+    // get 1st element by id
+    const element1 = document.getElementById(`i${id}`)
+    // get 2nd element by id
+    const element2 = document.getElementById(`w${id}`)
+    // get x/y coords for 1st element
+    const element1Coord = element1.getBoundingClientRect()
+    // get x/y coords for 2nd element
+    const element2Coord = element2.getBoundingClientRect()
+    // create obj with nessacery details
+    const lineObj = {
+      x1: element1Coord.x,
+      y1: element1Coord.y,
+      x2: element2Coord.x,
+      y2: element2Coord.y,
+    }
+    // push to state 
+    this.setState({
+      lines: [...this.state.lines, lineObj]
     })
   }
 
   render(){
+    const hasWon = this.state.currentScore === 3
     return (
-      this.state.hasWon ? <WinScreen /> :
-      <>
+      hasWon ? <WinScreen /> :
+      <>        
+        <HowToPlay>
+          <p>incert gif here</p>
+        </HowToPlay>
         <h1>Matching Game</h1>
         <div className="row">
           <div className="col-sm-4">
@@ -85,7 +131,20 @@ export class MatchingGame extends React.Component {
               />)
             }
           </div>
-          <div className="col-sm-4"></div>
+          <div className="col-sm-4">
+            <svg width={540} height={700}>
+              {
+                this.state.lines.map((line, index) => 
+                <MatchingGameLine 
+                  key={index}
+                  x1={line.x1}
+                  y1={line.y1}
+                  x2={line.x2}
+                  y2={line.y2}
+                />)
+              }
+            </svg>
+          </div>
           <div className="col-sm-4">
             {
               this.state.wordList.map(listItem => 
