@@ -9,6 +9,7 @@ import Backend from 'react-dnd-html5-backend'
 import DragAndDropGame from './DragAndDropGame'
 import Map from './Map'
 import BurgerMenu from './BurgerMenu'
+import Dictionary from './Dictionary'
 import MemoryGame from './MemoryGame'
 
 const MainSection = props => {
@@ -19,6 +20,10 @@ const MainSection = props => {
           <Route exact path="/">
             <BurgerMenu />
             <Map />
+          </Route>
+          <Route path="/dictionary">
+            <BurgerMenu />
+            <Dictionary />
           </Route>
           <Route path="/game/draganddrop">
             {props.words.length > 0 ? 
