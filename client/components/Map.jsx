@@ -34,7 +34,7 @@ export class Map extends React.Component {
           <h1>Larrakia</h1>
           <h1>Language</h1> 
           <h1>App</h1>
-          <h1 id='for-kids'>For Kids</h1>
+          <h1 className='for-kids'>For Kids</h1>
         </div>
       </div>
       </>
