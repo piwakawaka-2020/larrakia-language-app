@@ -112,6 +112,9 @@ div .app {
     height: 100vh;
 }
 
+.container blue-container {
+  background-color: blue;
+}
 .center-align {
     display: flex;
     align-items: center;
@@ -356,13 +359,8 @@ div .app {
 }
 
 .about-page {
-  background-color: rgb(96, 186, 70);
   padding: 3rem 0;
   font-size: 20px;
-}
-
-.about-container {
-  background-color: white;
 }
 
 .rounding {
@@ -371,10 +369,18 @@ div .app {
 
 .wl-icon {
   width: 200px;
+  height: auto;
 }
 
 .icon-container {
   display: flex;
   justify-content: center;
+  padding: 5rem;
 }
+
+.border-size {
+  width: 150%;
+  height: 200%;
+}
+
 
