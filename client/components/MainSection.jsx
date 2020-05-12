@@ -12,6 +12,7 @@ import LandingMap from './LandingMap'
 import BurgerMenu from './BurgerMenu'
 import MemoryGame from './MemoryGame'
 import About from './About'
+import MatchingGame from './MatchingGame'
 
 const MainSection = props => {
   return (
@@ -38,6 +39,11 @@ const MainSection = props => {
           <Route path="/game/memory">
             {props.words.length > 0 ? 
             <MemoryGame />: 
+            <div>Loading...</div> }
+          </Route>
+          <Route path="/game/matching">
+            {props.words.length > 0 ? 
+            <MatchingGame />: 
             <div>Loading...</div> }
           </Route>
         </Switch>
