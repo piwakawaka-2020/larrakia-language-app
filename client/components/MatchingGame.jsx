@@ -99,9 +99,9 @@ export class MatchingGame extends React.Component {
     const element2Coord = element2.getBoundingClientRect()
     // create obj with nessacery details
     const lineObj = {
-      x1: element1Coord.x,
+      x1: element1Coord.x -468,
       y1: element1Coord.y,
-      x2: element2Coord.x,
+      x2: element2Coord.x -200,
       y2: element2Coord.y,
     }
     // push to state 
@@ -118,48 +118,9 @@ export class MatchingGame extends React.Component {
         <HowToPlay>
           <p>incert gif here</p>
         </HowToPlay>
-        <h1>Matching Game</h1>
-        {/* <div className="row">
-          <div className="col-sm-4">
-            {
-              this.state.imageList.map(listItem => 
-              <MatchingGameImage 
-                key={`i${listItem.id}`} 
-                id={listItem.id} 
-                image={listItem.imageUrl} 
-                click={this.handleImageClick.bind(this)}
-              />)
-            }
-          </div>
-          <div className="col-sm-4">
-            <svg width={1000} height={700}>
-              {
-                this.state.lines.map((line, index) => 
-                <MatchingGameLine 
-                  key={index}
-                  x1={line.x1}
-                  y1={line.y1}
-                  x2={line.x2}
-                  y2={line.y2}
-                />)
-              }
-            </svg>
-          </div>
-          <div className="col-sm-4">
-            {
-              this.state.wordList.map(listItem => 
-              <MatchingGameWord 
-                key={`i${listItem.id}`} 
-                id={listItem.id} 
-                word={listItem.gulumirrginWord} 
-                click={this.handleWordClick.bind(this)}
-              />)
-            }
-          </div>
-        </div> */}
-        <h1>2nd look option</h1>
+        <h1 className='matching-game-title'>Matching Game</h1>
         <div className='matching-game-container'>
-          <svg width={1500} height={750}>
+          <svg width={750} height={680}>
             {
               this.state.lines.map((line, index) => 
               <MatchingGameLine 
@@ -193,15 +154,17 @@ export class MatchingGame extends React.Component {
               />)
             }
           </div>
+          <div className='matching-game-instructions-container'>
+            <Instructions>
+              <li>Select a word or image</li>
+              <li>Select the word or image that matches</li>
+              <li>If they match a line will link them</li>
+              <li>If they dont try again</li>
+              <li>Link them all to win the game</li>
+            </Instructions>
+          </div>
         </div>
         <ProgressBar currentScore={this.state.currentScore} scoreToWin={this.state.scoreToWin}/>
-        <Instructions>
-          <li>Select a word or image</li>
-          <li>Select the word or image that matches</li>
-          <li>If they match a line will link them</li>
-          <li>If they dont try again</li>
-          <li>Link them all to win the game</li>
-        </Instructions>
       </>
     )
   }
