@@ -21,7 +21,7 @@ class About extends Component {
 
                             <p>It was her wish that an app be created that allowed Larrakia people, and those living on Larrakia Land, to have access to learning and practising Gulumirrgin while strengthening its presence in the day to day.</p>
 
-                            <blockquote className="blockquote text-center p-5">‘Since the colonisation of our lands Larrakia people have actively resisted the enforcement of European control and worked to sustain and maintain our language, culture and lands. The Larrakia Language App is a continued effort towards the self-determination of Larrakia people. I hope to we can continue and honour the work done by those who have come before us while working to invest in the futures of those yet to come.’
+                            <blockquote className="blockquote text-center p-5">‘Since the colonisation of our lands Larrakia people have actively resisted the enforcement of European control and worked to sustain and maintain our language, culture and lands. The Larrakia Language App is a continued effort towards the self-determination of Larrakia people. I hope that we can continue and honour the work done by those who have come before us while working to invest in the futures of those yet to come.’
                             <footer className="blockquote-footer">Laniyuk (Director of Larrakia Language App)</footer></blockquote>
                         </div>
 

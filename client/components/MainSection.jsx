@@ -11,12 +11,8 @@ import Map from './Map'
 import LandingMap from './LandingMap'
 import BurgerMenu from './BurgerMenu'
 import MemoryGame from './MemoryGame'
-<<<<<<< HEAD
 import LarrakiaPeople from './LarrakiaPeoplePage'
-||||||| merged common ancestors
-=======
 import About from './About'
->>>>>>> d7f8978792037ca148d530265b2c17de109e07db
 
 const MainSection = props => {
   return (
