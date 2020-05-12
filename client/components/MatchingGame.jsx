@@ -119,7 +119,7 @@ export class MatchingGame extends React.Component {
           <p>incert gif here</p>
         </HowToPlay>
         <h1>Matching Game</h1>
-        <div className="row">
+        {/* <div className="row">
           <div className="col-sm-4">
             {
               this.state.imageList.map(listItem => 
@@ -132,7 +132,7 @@ export class MatchingGame extends React.Component {
             }
           </div>
           <div className="col-sm-4">
-            <svg width={540} height={700}>
+            <svg width={1000} height={700}>
               {
                 this.state.lines.map((line, index) => 
                 <MatchingGameLine 
@@ -146,6 +146,43 @@ export class MatchingGame extends React.Component {
             </svg>
           </div>
           <div className="col-sm-4">
+            {
+              this.state.wordList.map(listItem => 
+              <MatchingGameWord 
+                key={`i${listItem.id}`} 
+                id={listItem.id} 
+                word={listItem.gulumirrginWord} 
+                click={this.handleWordClick.bind(this)}
+              />)
+            }
+          </div>
+        </div> */}
+        <h1>2nd look option</h1>
+        <div className='matching-game-container'>
+          <svg width={1500} height={750}>
+            {
+              this.state.lines.map((line, index) => 
+              <MatchingGameLine 
+                key={index}
+                x1={line.x1}
+                y1={line.y1}
+                x2={line.x2}
+                y2={line.y2}
+              />)
+            }
+          </svg>
+          <div className='matching-game-image-container'>
+            {
+              this.state.imageList.map(listItem => 
+              <MatchingGameImage 
+                key={`i${listItem.id}`} 
+                id={listItem.id} 
+                image={listItem.imageUrl} 
+                click={this.handleImageClick.bind(this)}
+              />)
+            }
+          </div>
+          <div className='matching-game-word-container'>
             {
               this.state.wordList.map(listItem => 
               <MatchingGameWord 
