@@ -255,6 +255,24 @@ div .app {
   transform: scale(1.2);
 }
 
+#map-title {
+  font-family: 'Paytone One', sans-serif;
+  position: absolute;
+  bottom: 25%;
+  right: 2%;
+}
+
+#for-kids {
+  font-family: 'Neucha';
+}
+
+#landing-title {
+  font-family: 'Paytone One', sans-serif;
+  position: absolute;
+  top: 5%;
+  left: 14%;
+}
+
 .memoryGame {
   text-align: center;
   justify-content: center;
