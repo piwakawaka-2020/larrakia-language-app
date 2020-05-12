@@ -23,11 +23,17 @@ export class Map extends React.Component {
             <img className="button-image" src='/images/button2.png' alt='Dundil image' />
           </div>
         </Link>
+        <Link to='/game/matching'>
+          <div id="button-matchingGame">
+            <img className="button-image" src='/images/longbum.png' alt='Danijarra image' />
+          </div>
+        </Link>
         <div id="map-title">
-          <h1>The</h1>
-          <h1>Larrakia</h1>
-          <h1>Language</h1> 
-          <h1>App</h1>
+          <h1 className= 'mapTitle'>The</h1>
+          <h1 className= 'mapTitle'>Larrakia</h1>
+          <h1 className= 'mapTitle'>Language</h1> 
+          <h1 className= 'mapTitle'>Larrakia</h1>
+          <h1 className= 'mapTitle'>App</h1>
           <h1 className='for-kids'>For Kids</h1>
         </div>
       </div>
