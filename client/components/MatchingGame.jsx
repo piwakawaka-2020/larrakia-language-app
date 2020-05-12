@@ -59,18 +59,25 @@ export class MatchingGame extends React.Component {
 
   // sets state with selected image id
   handleImageClick(id) {
+    const oldId = this.state.selectedImage
     this.setState({
       selectedImage: id,
     })
     this.evalPair(id, this.state.selectedWord)
+    document.getElementById(`i${id}`).style.backgroundColor = "#622d90"
+    document.getElementById(`i${oldId}`).style.backgroundColor = "#9606c8"
+
   }
 
   // sets state with selected word id
   handleWordClick(id) {
+    const oldId = this.state.selectedWord
     this.setState({
       selectedWord: id,
     })
     this.evalPair(id, this.state.selectedImage)
+    document.getElementById(`w${id}`).style.backgroundColor = "#622d90"
+    document.getElementById(`w${oldId}`).style.backgroundColor = "#9606c8"
   }
 
   // evaluates if there is a matching pair

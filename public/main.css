@@ -112,6 +112,9 @@ div .app {
     height: 100vh;
 }
 
+.container blue-container {
+  background-color: blue;
+}
 .center-align {
     display: flex;
     align-items: center;
@@ -175,8 +178,6 @@ div .app {
 .dnd-image {
   height: 500px;
   width: 500px;
-
-  user-drag: none; 
   user-select: none;
   -moz-user-select: none;
   -webkit-user-drag: none;
@@ -248,12 +249,13 @@ div .app {
 
 #button-matchingGame {
   position: absolute;
-  top: 20%;
-  right: 45%;
+  top: 30%;
+  left: 35%;
   cursor: pointer;
   width: 200px;
   height:200px;
 }
+
 
 .button-image {
   width: 100%;
@@ -272,8 +274,13 @@ div .app {
   right: 2%;
 }
 
+.mapTitle {
+  font-size: 50px;
+}
+
 .for-kids {
   font-family: 'Neucha';
+  font-size: 50px;
 }
 
 #landing-title {
@@ -284,6 +291,17 @@ div .app {
 }
 
 /* memory game styles */
+.llaLanding {
+  text-align:left;float:left;
+  font-size: 60px;
+}
+
+.for-kidslanding {
+  text-align:right;float:right;
+  font-family: 'Neucha';
+  font-size: 60px;
+}
+
 .memoryGame {
   text-align: center;
   justify-content: center;
@@ -324,8 +342,8 @@ div .app {
 
 #button-enterApp{
   position: absolute;
-  top: 22%;
-  left: 35%;
+  top: 21%;
+  left: 36%;
   cursor: pointer;
   width: 100px;
   height:100px;
@@ -333,11 +351,18 @@ div .app {
 
 #welcomeBox{
   position: absolute;
-  bottom: 40%;
-  left: 35%;
+  bottom: 35%;
+  left: 25%;
   cursor: pointer;
-  width: 100px;
-  height:100px;
+  height: auto; 
+  width: auto; 
+  max-width: 600px; 
+  max-height: 600px;
+}
+
+.box-image {
+  width: 100%;
+  height: 100%;
 }
 
 /* matching game styles */
@@ -405,13 +430,8 @@ div .app {
 }
 
 .about-page {
-  background-color: rgb(96, 186, 70);
   padding: 3rem 0;
   font-size: 20px;
-}
-
-.about-container {
-  background-color: white;
 }
 
 .rounding {
@@ -420,9 +440,18 @@ div .app {
 
 .wl-icon {
   width: 200px;
+  height: auto;
 }
 
 .icon-container {
   display: flex;
   justify-content: center;
+  padding: 5rem;
 }
+
+.border-size {
+  width: 150%;
+  height: 200%;
+}
+
+

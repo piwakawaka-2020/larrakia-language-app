@@ -11,6 +11,7 @@ import Map from './Map'
 import LandingMap from './LandingMap'
 import BurgerMenu from './BurgerMenu'
 import MemoryGame from './MemoryGame'
+import LarrakiaPeople from './LarrakiaPeoplePage'
 import About from './About'
 import MatchingGame from './MatchingGame'
 
@@ -28,6 +29,9 @@ const MainSection = props => {
           <Route path="/map">
             <BurgerMenu />
             <Map />
+          </Route>
+          <Route path= "/LarrakiaPeople">
+          <LarrakiaPeople />
           </Route>
           <Route path="/game/draganddrop">
             {props.words.length > 0 ? 
