@@ -246,6 +246,15 @@ div .app {
   height:200px;
 }
 
+#button-matchingGame {
+  position: absolute;
+  top: 20%;
+  right: 45%;
+  cursor: pointer;
+  width: 200px;
+  height:200px;
+}
+
 .button-image {
   width: 100%;
   height: 100%;
