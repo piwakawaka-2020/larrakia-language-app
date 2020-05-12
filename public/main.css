@@ -112,6 +112,9 @@ div .app {
     height: 100vh;
 }
 
+.container blue-container {
+  background-color: blue;
+}
 .center-align {
     display: flex;
     align-items: center;
@@ -281,8 +284,18 @@ div .app {
 
 .larrakiaPeople {
   font-family: 'Neucha';
-  font-size: 20px;
+  font-size: 30px;
   text-align: center;
-  background-color: #ebcd73;
+  background-color: #006fff;
+  justify-content: space-evenly;
 
+}
+
+.larrakiaPeopleImage {
+
+  position: absolute;
+  top: 10%;
+  right: 45%;
+  width: 200px;
+  height:200px;
 }

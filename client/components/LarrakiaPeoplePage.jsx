@@ -11,12 +11,14 @@ class LarrakiaPeople extends React.Component {
 
   render() {
     return (
-      <nav>
-          <body className="larrakiaPeople">
-        <div>
+        <div className="larrakiaPeople">
           <Router>
           <BurgerMenu />
           </Router>  
+          <img className="larrakiaPeopleImage" src='/images/button2.png' />
+          <br></br>
+          <br></br>
+          <br></br>
           <br></br>
           <h1>Larrakia People are Saltwater People</h1>
           <br></br>
@@ -31,9 +33,8 @@ class LarrakiaPeople extends React.Component {
           <p>Remember, when we look after the land, the land will look after us.</p>
           <br></br>
           <p></p>
-        </div>
-          </body>
-      </nav>
+          </div>
+      
     )
   }
 }
