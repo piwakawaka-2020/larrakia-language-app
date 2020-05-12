@@ -8,9 +8,12 @@ import Backend from 'react-dnd-html5-backend'
 //Child component imports
 import DragAndDropGame from './DragAndDropGame'
 import Map from './Map'
+import LandingMap from './LandingMap'
 import BurgerMenu from './BurgerMenu'
 import Dictionary from './Dictionary'
 import MemoryGame from './MemoryGame'
+import LarrakiaPeople from './LarrakiaPeoplePage'
+import About from './About'
 
 const MainSection = props => {
   return (
@@ -18,12 +21,21 @@ const MainSection = props => {
       <Router>
         <Switch>
           <Route exact path="/">
+            <LandingMap />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/map">
             <BurgerMenu />
             <Map />
           </Route>
           <Route path="/dictionary">
             <BurgerMenu />
             <Dictionary />
+          </Route>
+          <Route path= "/LarrakiaPeople">
+            <LarrakiaPeople />
           </Route>
           <Route path="/game/draganddrop">
             {props.words.length > 0 ? 
