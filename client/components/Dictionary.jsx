@@ -13,7 +13,7 @@ class Dictionary extends React.Component {
   handleClickGulumirrgin = event => {
     this.setState({ sortForGulumirrgin: true })
   }
-  
+
   handleClickEnglish = event => {
     this.setState({ sortForGulumirrgin: false })
   }
@@ -44,9 +44,11 @@ class Dictionary extends React.Component {
             <img className="wl-icon" src="/images/longbum.png" alt="Danijarra or Long Bum" />
           </div>
           <h1 className="text-center neuchaFont"><strong>Dictionary</strong></h1>
-          <div className="btn-group btn-group-toggle" data-toggle="buttons">
-            <button className="btn btn-secondary active" onClick={this.handleClickGulumirrgin}>Gulumirrgin</button>
-            <button className="btn btn-secondary active" onClick={this.handleClickEnglish}>English</button>
+          <div classname="row justify-content-center">
+            <div className="col btn-group btn-group-toggle" data-toggle="buttons">
+              <button className="w-50 btn btn-secondary btn-lg neuchaFont" onClick={this.handleClickGulumirrgin}>Sort in Gulumirrgin</button>
+              <button className="w-50 btn btn-secondary btn-lg neuchaFont" onClick={this.handleClickEnglish}>Sort in English</button>
+            </div>
           </div>
           <div className="p-5">
             {dictionaryEntries}
