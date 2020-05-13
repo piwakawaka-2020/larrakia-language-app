@@ -12,12 +12,12 @@ const WinScreen = () => {
             <Confetti width={width} height={height}/>
             <div className="row">
                 <div className="mx-auto">
-                    <h1>Well Done!</h1>
+                    <h1 className= "neuchaFont"><strong>Well Done!</strong></h1>
                 </div>
             </div>
             <div className="row">
                 <div className="mx-auto">
-                    <Link to="/"><button>Press here to go back to Larrakia</button></Link>
+                    <Link to="/map"><button className="btn btn-primary">Press here to go back to Larrakia</button></Link>
                 </div>
             </div>
         </div>

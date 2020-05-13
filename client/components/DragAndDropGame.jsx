@@ -13,6 +13,7 @@ import SuccessTick from './SuccessTick'
 import FailureIndicator from './FailureIndicator'
 import Instructions from './Instructions'
 import HowToPlay from './HowToPlay'
+import HomeButton from './HomeButton'
 
 
 class DragAndDropGame extends Component {
@@ -96,10 +97,13 @@ class DragAndDropGame extends Component {
                 <HowToPlay>
                     <img src="/gifs/dndGameHTP.gif" alt="Drag and drop game demo gif"/>
                 </HowToPlay>
+                <div className="home-btn-container">
+                    <HomeButton />
+                </div>
                 {this.state.gameWin < 10 ? 
                     <div className="container-fluid h-100">
                     <div className="row main-word">
-                        <div className="mx-auto">
+                        <div className="mx-auto" >
                             <Word key={wordOne.id} word={this.state.displayedWord} />
                         </div>
                     </div>
@@ -108,7 +112,7 @@ class DragAndDropGame extends Component {
                         {this.state.changeRound ? <SuccessTick /> : this.state.isIncorrect ? <FailureIndicator /> : ''}
                     </div>
 
-                    <div className="row align-items-center justify-content-center h-75 dnd-container">
+                    <div className="row align-items-center justify-content-center h-75">
                         <div className="col">
                             <Image key={wordOne.id} id={wordOne.id} image={wordOne.imageUrl} word={wordOne.gulumirrginWord} displayedWord={this.state.displayedWord} changeRoundHandler={this.changeRoundHandler} checkmarkHandler={this.checkmarkHandler} failMessageHandler={this.failMessageHandler}/>
                         </div>
@@ -122,15 +126,19 @@ class DragAndDropGame extends Component {
                         </div>
                     </div>
 
-                    <ProgressBar currentScore={this.state.gameWin} scoreToWin={this.state.scoreToWin}/>
+                    <div>
+                        <ProgressBar currentScore={this.state.gameWin} scoreToWin={this.state.scoreToWin}/>
+                    </div>
                     
-                    <Instructions>
-                        <li>Drag the matching image into the word box</li>
-                        <li>If you get it right you go onto the next word</li>
-                        <li>If you don't, you get to try again until you get it right</li>
-                        <li>Get 10 right and you win the game!</li>
-                        <li>Good Luck!</li>
-                    </Instructions>
+                    <div>
+                        <Instructions>
+                            <li>Drag the matching image into the word box</li>
+                            <li>If you get it right you go onto the next word</li>
+                            <li>If you don't, you get to try again until you get it right</li>
+                            <li>Get 10 right and you win the game!</li>
+                            <li>Good Luck!</li>
+                        </Instructions>
+                    </div>
                 </div> :
                 <div>
                     <WinScreen />

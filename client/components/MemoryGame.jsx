@@ -5,6 +5,7 @@ import MemoryGameBoard from './MemoryGameBoard'
 import WinScreen from './WinScreen'
 import Instructions from './Instructions'
 import HowToPlay from './HowToPlay'
+import HomeButton from './HomeButton'
 
 const tryAgain = 'No match, try again'
 
@@ -96,30 +97,34 @@ class MemoryGame extends React.Component {
   render () {
     const hasWon = this.state.matchCount === 8
     return (
-      hasWon ? <WinScreen /> :
-      <>
-        <HowToPlay>
-          <img src="/gifs/memoryGameHTP.gif" alt="memory game demo gif"/>
-        </HowToPlay>
+      <div>
+        <HomeButton />
+        {hasWon ? <WinScreen /> :
+        <>
+          <HowToPlay>
+            <img src="/gifs/memoryGameHTP.gif" alt="memory game demo gif"/>
+          </HowToPlay>
 
-        <div className='memoryGame'>
-          <h1>Welcome to the Memory Game</h1>
-          <h2>Match all the tiles to win</h2>
+          <div className='memoryGame'>
+            <h1><strong>Welcome to the Memory Game</strong></h1>
+            <h2>Match all the tiles to win</h2>
 
-          <MemoryGameBoard tiles={this.state.tiles} evalMatch={this.evalMatch} matchCount={this.state.matchCount}/>
+            <MemoryGameBoard tiles={this.state.tiles} evalMatch={this.evalMatch} matchCount={this.state.matchCount}/>
 
-          <h5>{!this.state.isMatch && tryAgain}</h5>
-        </div>
-
-        <Instructions>
-          <li>Flip a tile any tile</li>
-          <li>Flip another tile and see if it matches</li>
-          <li>If it dose it will stay. Then try and find another pair</li>
-          <li>If it dosen't, The tiles will stay where they are but flip back over so you will need to remeber what they were. Try again.</li>
-          <li>Matche all tiles and you win the game!</li>
-          <li>Good Luck!</li>
-        </Instructions>
-      </>
+            <h5>{!this.state.isMatch && tryAgain}</h5>
+          </div>
+          <div className="memory-instructions-container">
+            <Instructions >
+              <li>Flip a tile any tile</li>
+              <li>Flip another tile and see if it matches</li>
+              <li>If it dose it will stay. Then try and find another pair</li>
+              <li>If it dosen't, The tiles will stay where they are <br/>but flip back over so you will need to remeber what they were. <br/> Try again.</li>
+              <li>Match all tiles and you win the game!</li>
+              <li>Good Luck!</li>
+            </Instructions>
+          </div>
+        </>}
+      </div>
     )
   }
 }

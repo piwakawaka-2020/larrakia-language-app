@@ -90,7 +90,9 @@ body {
 .nav-links.open li {
     opacity: 1;
 }
-/*END - CSS Style rules for menu burger - END */
+/* END - CSS Style rules for menu burger - END */
+
+/* CSS Style rules for Drop and drag game */
 
 div .app {
     height: 90vh;
@@ -98,8 +100,8 @@ div .app {
 
 .drop-box {
     display: flex;
-    height: 20rem;
-    width: 30rem;
+    height: 10rem;
+    width: 20rem;
     margin-right: 1.5rem;
     margin-bottom: 1.5rem;
     color: black;
@@ -112,6 +114,10 @@ div .app {
     background-color: white;
 }
 
+.dnd-word {
+  font-size: 70px;
+}
+
 .container-full {
     height: 100vh;
 }
@@ -122,6 +128,78 @@ div .app {
     justify-content: center;
     flex-direction: column;
 }
+
+.dnd-image {
+  height: 400px;
+  width: 400px;
+  border-radius: 20px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.col {
+  display: flex;
+  justify-content: center;
+}
+
+.success-fail-container {
+  position: absolute;
+  right: 51%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+  z-index: -1;
+}
+
+.fail-message {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+}
+.fail-container {
+  position: absolute;
+  text-align: center;
+  width: 500px;
+}
+
+.home-btn-container {
+  position: relative;
+  z-index: 2
+}
+
+.image-drag {
+  width: 400px;
+  height: 400px;
+  margin: 0;
+  
+}
+
+.dnd-background {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #CC9900;
+  border-radius: 20px;
+}
+
+.main-word {
+  position: relative;
+  padding-top: 3rem;
+  z-index: 1;
+}
+
+.modal-body-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* END - CSS Style rules for Drop and drag game */
 
 /* CSS Style Rules for Checkmark */
 .checkmark {
@@ -176,85 +254,45 @@ div .app {
 }
 /* END - CSS Style rules for checkmark - END */
 
-.dnd-image {
-  height: 500px;
-  width: 500px;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-}
-
-.col {
-  display: flex;
-  justify-content: center;
-}
-
-.success-fail-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 4rem;
-}
-
-.fail-message {
-  position: absolute;
-  padding: 0;
-  margin: 0;
-}
-
-.image-drag {
-  width: 500px;
-  height: 500px;
-  margin: 0;
-}
-
-.main-word {
-  padding-top: 3rem;
-}
-
-.modal-body-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* map styles */
+/* CSS Styles for Larrakia map page  */
 #mapContainer {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 #mapImage {
-  width: 100%;
-  height: auto;
+  padding-top: 3.5rem;
+  width: 70%;
+  height: 70%;
 }
 
 #button-dragAndDropGame {
   position: absolute;
-  bottom: 25%;
-  left: 35%;
+  bottom: 10%;
+  left: 37%;
   cursor: pointer;
-  width: 200px;
-  height: 200px;
+  width: 10rem;
+  height: 10rem;
 }
 
 #button-memoryGame {
   position: absolute;
-  bottom: 40%;
+  bottom: 30%;
   right: 40%;
   cursor: pointer;
-  width: 200px;
-  height:200px;
+  width: 10rem;
+  height: 10rem;
 }
 
 #button-matchingGame {
   position: absolute;
-  top: 30%;
+  top: 27%;
   left: 35%;
   cursor: pointer;
-  width: 200px;
-  height:200px;
+  width: 10rem;
+  height: 10rem;
 }
 
 .button-image {
@@ -270,14 +308,15 @@ div .app {
 #map-title {
   font-family: 'Paytone One', sans-serif;
   position: absolute;
-  bottom: 25%;
   right: 2%;
 }
 
 .for-kids {
   font-family: 'Neucha';
 }
+/* END -  CSS Styles for Larrakia map page  */
 
+/* CSS Styles for Landing map page  */
 #landing-title {
   font-family: 'Paytone One', sans-serif;
   position: absolute;
@@ -285,7 +324,6 @@ div .app {
   left: 14%;
 }
 
-/* memory game styles */
 .llaLanding {
   text-align:left;float:left;
   font-size: 60px;
@@ -297,69 +335,83 @@ div .app {
   font-size: 60px;
 }
 
+  #landingMapContainer {
+    position: relative;
+  }
+  
+  #landingMapImage {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  #button-enterApp{
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    cursor: pointer;
+    width: 100px;
+    height:100px;
+    z-index: 2;
+  }
+  
+  #welcomeBox{
+    position: absolute;
+    bottom: 30%;
+    left: 28%;
+    width: auto;
+    height: auto;
+    max-width: 400px;
+    max-height: 400px;
+    z-index: 1;
+  }
+  
+  .box-image {
+    width: 100%;
+    height: 100%;
+  }
+/* END -  CSS Styles for Landing map page  */
+
+/* CSS Styles for memory game  */
 .memoryGame {
   text-align: center;
   justify-content: center;
+  font-family: 'Neucha';
 }
 
 .memoryGameTiles {
   display: grid;
-  grid-template-columns: 130px 130px 130px 130px;
-  grid-template-rows: 130px 130px 130px 130px;
+  grid-template-columns: 170px 170px 170px 170px;
+  grid-template-rows: 170px 170px 170px 170px;
   justify-content: center;
 }
 
 .memoryGameTile {
   border: solid black 1px;
-  border-radius: 10%;
+  border-radius: 20px;
   padding: 10px;
   align-items: center;
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
+  background-color: #cc9900;
 }
 
 .memoryGameTileImage {
   vertical-align: top;
+  border-radius: 20px;
   width: 100%;
   height: 100%;
 }
 
-/* landing page styles */
-#landingMapContainer {
-  position: relative;
-}
-
-#landingMapImage {
-  width: 100%;
-  height: 100%;
-}
-
-#button-enterApp{
+.memory-instructions-container {
   position: absolute;
-  top: 22%;
-  left: 35%;
-  cursor: pointer;
-  width: 100px;
-  height:100px;
+  bottom: 15%;
+  left: 5%;
+  z-index: 2;
 }
 
-#welcomeBox{
-  position: absolute;
-  bottom: 35%;
-  left: 25%;
-  cursor: pointer;
-  width: auto;
-  height: auto;
-  max-width: 600px;
-  max-height: 600px;
-}
+/* END -  CSS Styles for memory game  */
 
-.box-image {
-  width: 100%;
-  height: 100%;
-}
-
-/* matching game styles */
+/* CSS Styles for matching game */
 .matching-game-title{
   text-align: center;
   font-family: 'Neucha';
@@ -388,8 +440,8 @@ div .app {
 
 .matching-game-instructions-container{
   position: absolute;
-  top: 0;
-  left: -55%;
+  bottom: 0%;
+  left: -70%;
   z-index: 2;
 }
 
@@ -397,23 +449,26 @@ div .app {
   width: 200px;
   height: 200px;
   margin-top: 20px;
-  background-color: #9606c8;
+  background-color: #cc9900;
   justify-content: center;
   padding: 20px;
-  text-align: center;
-  border-radius: 10px;
+  align-items: center;
+  border-radius: 20px;
+  display: flex;
 }
 
 .matching-game-item h4 {
-  color: #cc9900;
+  color: #663333;
 }
 
 .matching-game-item img {
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+  border-radius: 20px;
 }
+/* END -  CSS Styles for matching game */
 
+/*  CSS Styles for about page */
 .team-card {
   max-width: 540px;
 }
@@ -443,4 +498,108 @@ div .app {
 .icon-container {
   display: flex;
   justify-content: center;
+  padding: 5rem;
+}
+/* END -  CSS Styles for about page */
+
+/* CSS Style for home button */
+.home-button {
+  position: fixed;
+  width: 5rem;
+  height: 5rem;
+  margin: 50px 0 0 100px;
+}
+
+.home-button:hover {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+/* END - CSS Styles for home button */
+
+/* CSS Styles for dictionary page */
+.border-size {
+  width: 150%;
+  height: 200%;
+}
+
+.dictionary .card img {
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+}
+
+.dictionary-img-container {
+  background-color: #CC9900;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.dictionary .btn-secondary {
+  color: #663333 !important;
+  background-color: #cc9900 !important;
+  border-color: #CC9900 !important;
+}
+
+.dictionary .btn-primary {
+  background-color: #663333 !important;
+  border-color: #663333 !important;
+}
+
+.btn-ochre {
+    color: #fff;
+    background-color: #CC9900;
+    border-color: #CC9900;
+}
+/* CSS Styles for dictionary page */ 
+
+
+.neuchaFont {
+  font-family: 'Neucha';
+}
+
+li {
+  font-family: "Neucha";
+}
+
+.instructions {
+  padding-left: 2rem;
+}
+.text-center1{
+  text-align: center;
+  font-family:"Neucha";
+}
+
+.p-4 {
+  font-family:"Neucha";
+  
+}
+
+
+
+
+.speaker-icon {
+  width: 50px !important;
+  height: 50px !important;
+  cursor: pointer;
+}
+
+#loading-gif {
+  margin-top: 50px;
 }
