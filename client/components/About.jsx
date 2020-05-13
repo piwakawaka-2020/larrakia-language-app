@@ -10,7 +10,7 @@ class About extends Component {
                 <div className="about-page">
                     <div className="container">
                         <div className="icon-container">
-                            <img className="wl-icon" src="/images/button1.png" alt="Water Lily"/>
+                            <img className="wl-icon" src="/images/button1.png" alt="Dambilinggwa or Water Lily"/>
                         </div>
                         <h1 className="text-center">About</h1>
                         <div className="p-5">
@@ -39,11 +39,11 @@ class About extends Component {
                         
                         <div className="p-5">
                             <h2>Meet the Team</h2>
-                                <TeamCard name="Laniyuk" role="Project Director" profilePic='/images/laniyukProfile.png'/>
-                                <TeamCard name="Simone" role="Project Manager" profilePic='/images/simoneProfile.png'/>
-                                <TeamCard name="Zac" role="Git/Deployment"/>
-                                <TeamCard name="Boyd" role="Backend" profilePic='/images/boydProfile.png'/>
-                                <TeamCard name="Richard" role="Frontend" profilePic='/images/richardProfile.png'/>
+                                <TeamCard name="Laniyuk" role="Project Director" profilePic='/images/laniyukProfile.png' />
+                                <TeamCard name="Simone" role="Project Manager" profilePic='/images/simoneProfile.png' />
+                                <TeamCard name="Zac" role="Git/Deployment" profilePic='/images/zacProfile.png' />
+                                <TeamCard name="Boyd" role="Backend" profilePic='/images/boydProfile.png' />
+                                <TeamCard name="Richard" role="Frontend" profilePic='/images/richardProfile.png' />
                         </div>
                     </div>
                 </div>

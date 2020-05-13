@@ -9,6 +9,7 @@ import MatchingGameWord from './MatchingGameWord'
 import WinScreen from './WinScreen'
 import MatchingGameLine from './MatchingGameLine'
 import HowToPlay from './HowToPlay'
+import HomeButton from './HomeButton'
 
 export class MatchingGame extends React.Component {
 
@@ -64,8 +65,8 @@ export class MatchingGame extends React.Component {
       selectedImage: id,
     })
     this.evalPair(id, this.state.selectedWord)
-    document.getElementById(`i${id}`).style.backgroundColor = "#622d90"
-    document.getElementById(`i${oldId}`).style.backgroundColor = "#9606c8"
+    document.getElementById(`i${id}`).style.backgroundColor = "#fa9d00"
+    document.getElementById(`i${oldId}`).style.backgroundColor = "#cc9900"
 
   }
 
@@ -76,8 +77,8 @@ export class MatchingGame extends React.Component {
       selectedWord: id,
     })
     this.evalPair(id, this.state.selectedImage)
-    document.getElementById(`w${id}`).style.backgroundColor = "#622d90"
-    document.getElementById(`w${oldId}`).style.backgroundColor = "#9606c8"
+    document.getElementById(`w${id}`).style.backgroundColor = "#fa9d00"
+    document.getElementById(`w${oldId}`).style.backgroundColor = "#cc9900"
   }
 
   // evaluates if there is a matching pair
@@ -121,9 +122,10 @@ export class MatchingGame extends React.Component {
     const hasWon = this.state.currentScore === 3
     return (
       hasWon ? <WinScreen /> :
-      <>        
+      <>
+        <HomeButton />        
         <HowToPlay>
-          <p>incert gif here</p>
+          <img src="/gifs/matchingGameHTP.gif" alt="Matching game demo gif"/>
         </HowToPlay>
         <h1 className='matching-game-title'><strong>Matching Game</strong></h1>
         <div className='matching-game-container'>

@@ -5,6 +5,7 @@ import MemoryGameBoard from './MemoryGameBoard'
 import WinScreen from './WinScreen'
 import Instructions from './Instructions'
 import HowToPlay from './HowToPlay'
+import HomeButton from './HomeButton'
 
 const tryAgain = 'No match, try again'
 
@@ -98,6 +99,7 @@ class MemoryGame extends React.Component {
     return (
       hasWon ? <WinScreen /> :
       <>
+        <HomeButton />
         <HowToPlay>
           <img src="/gifs/memoryGameHTP.gif" alt="memory game demo gif"/>
         </HowToPlay>

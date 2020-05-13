@@ -33,7 +33,7 @@ class Dictionary extends React.Component {
         <BurgerMenu />
         <div className="container">
           <div className="icon-container">
-            <img className="wl-icon" src="/images/button2.png" alt="Native Peanut" />
+            <img className="wl-icon" src="/images/longbum.png" alt="Danijarra or Long Bum" />
           </div>
           <h1 className="text-center" className= "neuchaFont"><strong>Dictionary</strong></h1>
           <button type="button" className= "neuchaFont" className="btn btn-secondary btn-lg btn-block" onClick={this.handleClick}>

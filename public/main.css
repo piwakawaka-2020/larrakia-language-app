@@ -223,38 +223,42 @@ div .app {
 /* map styles */
 #mapContainer {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 #mapImage {
-  width: 100%;
-  height: auto;
+  padding-top: 3.5rem;
+  width: 70%;
+  height: 70%;
 }
 
 #button-dragAndDropGame {
   position: absolute;
-  bottom: 25%;
-  left: 35%;
+  bottom: 10%;
+  left: 37%;
   cursor: pointer;
-  width: 200px;
-  height: 200px;
+  width: 10rem;
+  height: 10rem;
 }
 
 #button-memoryGame {
   position: absolute;
-  bottom: 40%;
+  bottom: 30%;
   right: 40%;
   cursor: pointer;
-  width: 200px;
-  height:200px;
+  width: 10rem;
+  height: 10rem;
 }
 
 #button-matchingGame {
   position: absolute;
-  top: 30%;
+  top: 27%;
   left: 35%;
   cursor: pointer;
-  width: 200px;
-  height:200px;
+  width: 10rem;
+  height: 10rem;
 }
 
 .button-image {
@@ -270,7 +274,6 @@ div .app {
 #map-title {
   font-family: 'Paytone One', sans-serif;
   position: absolute;
-  bottom: 25%;
   right: 2%;
 }
 
@@ -332,28 +335,29 @@ div .app {
 }
 
 #landingMapImage {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 #button-enterApp{
   position: absolute;
-  top: 22%;
+  top: 20%;
   left: 35%;
   cursor: pointer;
   width: 100px;
   height:100px;
+  z-index: 2;
 }
 
 #welcomeBox{
   position: absolute;
-  bottom: 35%;
-  left: 25%;
-  cursor: pointer;
+  bottom: 30%;
+  left: 28%;
   width: auto;
   height: auto;
-  max-width: 600px;
-  max-height: 600px;
+  max-width: 400px;
+  max-height: 400px;
+  z-index: 1;
 }
 
 .box-image {
@@ -399,15 +403,16 @@ div .app {
   width: 200px;
   height: 200px;
   margin-top: 20px;
-  background-color: #9606c8;
+  background-color: #cc9900;
   justify-content: center;
   padding: 20px;
-  text-align: center;
+  align-items: center;
   border-radius: 10px;
+  display: flex;
 }
 
 .matching-game-item h4 {
-  color: #cc9900;
+  color: #663333;
 }
 
 .matching-game-item img {
@@ -448,6 +453,30 @@ div .app {
   padding: 5rem;
 }
 
+.home-button {
+  width: 5rem;
+  height: 5rem;
+  padding: 1rem 0 0 1rem;
+}
+
+.home-button:hover {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
 #loading-gif {
   margin-top: 50px;
 }
@@ -466,7 +495,10 @@ div .app {
   font-family: 'Neucha';
 }
 
-
 li {
   font-family: "Neucha";
+}
+
+.instructions {
+  padding-left: 2rem;
 }
