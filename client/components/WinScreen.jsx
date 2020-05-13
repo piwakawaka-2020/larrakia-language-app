@@ -12,7 +12,7 @@ const WinScreen = () => {
             <Confetti width={width} height={height}/>
             <div className="row">
                 <div className="mx-auto">
-                    <h1>Well Done!</h1>
+                    <h1 className= "neuchaFont"><strong>Well Done!</strong></h1>
                 </div>
             </div>
             <div className="row">

@@ -20,7 +20,7 @@ const DropBox = ({ word }) => {
     }
 
     return (
-        <div ref={drop} style={{backgroundColor}} className="drop-box mx-auto">
+        <div ref={drop} style={{backgroundColor}} className="drop-box mx-auto" >
             {isActive ? 'Drop here' : 'Drag here'}
         </div>
     )

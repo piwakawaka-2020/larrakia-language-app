@@ -491,6 +491,14 @@ div .app {
   height: 100%;
 }
 
+.neuchaFont {
+  font-family: 'Neucha';
+}
+
+li {
+  font-family: "Neucha";
+}
+
 .instructions {
   padding-left: 2rem;
 }

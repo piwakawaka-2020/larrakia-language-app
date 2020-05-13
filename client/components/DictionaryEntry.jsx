@@ -38,8 +38,8 @@ class DictionaryEntry extends React.Component {
           </div>
           <div className="col-md-8">
             <div className="card-body">
-              <h2>Gulumirrgin: {this.props.word.gulumirrginWord}</h2>
-              <h2>English: {this.props.word.englishWord}</h2>
+              <h2 className= "neuchaFont">Gulumirrgin: {this.props.word.gulumirrginWord}</h2>
+              <h2 className= "neuchaFont">English: {this.props.word.englishWord}</h2>
               {this.props.word.audioUrl !== null &&
                 <button type="button" className="btn btn-primary" onClick={this.handleClick}>Listen to Word ▶</button>
               }
