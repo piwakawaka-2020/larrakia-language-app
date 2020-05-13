@@ -125,7 +125,7 @@ export class MatchingGame extends React.Component {
       <>
         <HomeButton />        
         <HowToPlay>
-          <p>incert gif here</p>
+          <img src="/gifs/matchingGameHTP.gif" alt="Matching game demo gif"/>
         </HowToPlay>
         <h1 className='matching-game-title'>Matching Game</h1>
         <div className='matching-game-container'>
