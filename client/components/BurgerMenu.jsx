@@ -26,7 +26,7 @@ class BurgerMenu extends React.Component {
           <div className="hamburger-line"></div>
         </div>
         <ul className={"nav-links " + (this.state.isShowing && "open")}>
-          <li><a href= "#">Let's go back Home to Larrakia Country</a></li>
+          <li><a href= "/map">Let's go back Home to Larrakia Country</a></li>
           <li><a href="#">Gulumirrgin Dictionary for Kids</a></li>
           <li><a href="/LarrakiaPeople">Larrakia People</a></li>
           <li><a href="/about">About </a></li>
