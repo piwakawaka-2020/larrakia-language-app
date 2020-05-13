@@ -130,7 +130,7 @@ export class MatchingGame extends React.Component {
   canPlaySound() {
     const currentTime = (new Date()).getTime()
     const threshold = 3000
-    return currentTime > (this.state.lastSoundPlayed + threshold)
+    return this.state.currentScore < 2 && currentTime > (this.state.lastSoundPlayed + threshold)
   }
 
   // plays sound of successfull pair
