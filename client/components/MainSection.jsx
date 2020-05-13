@@ -31,7 +31,6 @@ const MainSection = props => {
             <Map />
           </Route>
           <Route path="/dictionary">
-            <BurgerMenu />
             <Dictionary />
           </Route>
           <Route path= "/LarrakiaPeople">
