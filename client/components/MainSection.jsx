@@ -15,6 +15,7 @@ import MemoryGame from './MemoryGame'
 import LarrakiaPeople from './LarrakiaPeoplePage'
 import About from './About'
 import MatchingGame from './MatchingGame'
+import Loading from './Loading'
 
 const MainSection = props => {
   return (
@@ -42,17 +43,17 @@ const MainSection = props => {
               <DndProvider backend={Backend}>
                 <DragAndDropGame />
               </DndProvider> : 
-            <div>Loading...</div> }
+            <Loading /> }
           </Route>
           <Route path="/game/memory">
             {props.words.length > 0 ? 
             <MemoryGame />: 
-            <div>Loading...</div> }
+            <Loading /> }
           </Route>
           <Route path="/game/matching">
             {props.words.length > 0 ? 
             <MatchingGame />: 
-            <div>Loading...</div> }
+            <Loading /> }
           </Route>
         </Switch>
       </Router>
