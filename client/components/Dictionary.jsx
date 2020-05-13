@@ -36,7 +36,7 @@ class Dictionary extends React.Component {
             <img className="wl-icon" src="/images/button2.png" alt="Native Peanut" />
           </div>
           <h1 className="text-center">DICTIONARY</h1>
-          <button type="button" class="btn btn-secondary btn-lg btn-block" onClick={this.handleClick}>
+          <button type="button" className="btn btn-secondary btn-lg btn-block" onClick={this.handleClick}>
             Sort by {this.state.sortForGulumirrgin ? "English" : "Gulumirrgin"} alphabetical order?
           </button>
           <div className="p-5">
