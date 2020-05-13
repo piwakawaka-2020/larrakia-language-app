@@ -121,60 +121,62 @@ export class MatchingGame extends React.Component {
   render(){
     const hasWon = this.state.currentScore === 3
     return (
-      hasWon ? <WinScreen /> :
-      <>
-        <HomeButton />        
-        <HowToPlay>
-          <img src="/gifs/matchingGameHTP.gif" alt="Matching game demo gif"/>
-        </HowToPlay>
-        <h1 className='matching-game-title'><strong>Matching Game</strong></h1>
-        <div className='matching-game-container'>
-          <svg width={750} height={680}>
-            {
-              this.state.lines.map((line, index) => 
-              <MatchingGameLine 
-                key={index}
-                x1={line.x1}
-                y1={line.y1}
-                x2={line.x2}
-                y2={line.y2}
-              />)
-            }
-          </svg>
-          <div className='matching-game-image-container'>
-            {
-              this.state.imageList.map(listItem => 
-              <MatchingGameImage 
-                key={`i${listItem.id}`} 
-                id={listItem.id} 
-                image={listItem.imageUrl} 
-                click={this.handleImageClick.bind(this)}
-              />)
-            }
+      <div>
+        <HomeButton /> 
+        {hasWon ? <WinScreen /> :
+        <>       
+          <HowToPlay>
+            <img src="/gifs/matchingGameHTP.gif" alt="Matching game demo gif"/>
+          </HowToPlay>
+          <h1 className='matching-game-title'><strong>Matching Game</strong></h1>
+          <div className='matching-game-container'>
+            <svg width={750} height={680}>
+              {
+                this.state.lines.map((line, index) => 
+                <MatchingGameLine 
+                  key={index}
+                  x1={line.x1}
+                  y1={line.y1}
+                  x2={line.x2}
+                  y2={line.y2}
+                />)
+              }
+            </svg>
+            <div className='matching-game-image-container'>
+              {
+                this.state.imageList.map(listItem => 
+                <MatchingGameImage 
+                  key={`i${listItem.id}`} 
+                  id={listItem.id} 
+                  image={listItem.imageUrl} 
+                  click={this.handleImageClick.bind(this)}
+                />)
+              }
+            </div>
+            <div className='matching-game-word-container'>
+              {
+                this.state.wordList.map(listItem => 
+                <MatchingGameWord 
+                  key={`i${listItem.id}`} 
+                  id={listItem.id} 
+                  word={listItem.gulumirrginWord} 
+                  click={this.handleWordClick.bind(this)}
+                />)
+              }
+            </div>
+            <div className='matching-game-instructions-container' >
+              <Instructions>
+                <li>Select a word or image</li>
+                <li>Select the word or image that matches</li>
+                <li>If they match a line will link them</li>
+                <li>If they dont try again</li>
+                <li>Link them all to win the game</li>
+              </Instructions>
+            </div>
           </div>
-          <div className='matching-game-word-container'>
-            {
-              this.state.wordList.map(listItem => 
-              <MatchingGameWord 
-                key={`i${listItem.id}`} 
-                id={listItem.id} 
-                word={listItem.gulumirrginWord} 
-                click={this.handleWordClick.bind(this)}
-              />)
-            }
-          </div>
-          <div className='matching-game-instructions-container' >
-            <Instructions>
-              <li>Select a word or image</li>
-              <li>Select the word or image that matches</li>
-              <li>If they match a line will link them</li>
-              <li>If they dont try again</li>
-              <li>Link them all to win the game</li>
-            </Instructions>
-          </div>
-        </div>
-        <ProgressBar currentScore={this.state.currentScore} scoreToWin={this.state.scoreToWin}/>
-      </>
+          <ProgressBar currentScore={this.state.currentScore} scoreToWin={this.state.scoreToWin}/>
+        </>}
+      </div>
     )
   }
 

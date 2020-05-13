@@ -98,8 +98,8 @@ div .app {
 
 .drop-box {
     display: flex;
-    height: 20rem;
-    width: 30rem;
+    height: 10rem;
+    width: 20rem;
     margin-right: 1.5rem;
     margin-bottom: 1.5rem;
     color: black;
@@ -110,6 +110,10 @@ div .app {
     line-height: normal;
     border: 5px dotted black;
     background-color: white;
+}
+
+.dnd-word {
+  font-size: 70px;
 }
 
 .container-full {
@@ -177,8 +181,9 @@ div .app {
 /* END - CSS Style rules for checkmark - END */
 
 .dnd-image {
-  height: 500px;
-  width: 500px;
+  height: 400px;
+  width: 400px;
+  border-radius: 20px;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-drag: none;
@@ -192,10 +197,13 @@ div .app {
 }
 
 .success-fail-container {
+  position: absolute;
+  right: 51%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 4rem;
+  margin-top: 4rem;
+  z-index: -1;
 }
 
 .fail-message {
@@ -203,15 +211,38 @@ div .app {
   padding: 0;
   margin: 0;
 }
+.fail-container {
+  position: absolute;
+  text-align: center;
+  width: 500px;
+}
+
+.home-btn-container {
+  position: relative;
+  z-index: 2
+}
 
 .image-drag {
+  width: 400px;
+  height: 400px;
+  margin: 0;
+  
+}
+
+.dnd-background {
   width: 500px;
   height: 500px;
-  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #CC9900;
+  border-radius: 20px;
 }
 
 .main-word {
+  position: relative;
   padding-top: 3rem;
+  z-index: 1;
 }
 
 .modal-body-container {
@@ -315,7 +346,7 @@ div .app {
 
 .memoryGameTile {
   border: solid black 1px;
-  border-radius: 10%;
+  border-radius: 20px;
   padding: 10px;
   align-items: center;
   height: 150px;
@@ -325,6 +356,7 @@ div .app {
 
 .memoryGameTileImage {
   vertical-align: top;
+  border-radius: 20px;
   width: 100%;
   height: 100%;
 }
@@ -394,8 +426,8 @@ div .app {
 
 .matching-game-instructions-container{
   position: absolute;
-  top: 0;
-  left: -55%;
+  bottom: 0%;
+  left: -70%;
   z-index: 2;
 }
 
@@ -407,7 +439,7 @@ div .app {
   justify-content: center;
   padding: 20px;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 20px;
   display: flex;
 }
 
@@ -418,7 +450,7 @@ div .app {
 .matching-game-item img {
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .team-card {
@@ -454,9 +486,10 @@ div .app {
 }
 
 .home-button {
+  position: fixed;
   width: 5rem;
   height: 5rem;
-  padding: 1rem 0 0 1rem;
+  margin: 50px 0 0 100px;
 }
 
 .home-button:hover {
@@ -487,8 +520,19 @@ div .app {
 }
 
 .dictionary .card img {
-  width: 100%;
-  height: 100%;
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+}
+
+.dictionary-img-container {
+  background-color: #CC9900;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
 }
 
 .neuchaFont {
@@ -501,4 +545,23 @@ li {
 
 .instructions {
   padding-left: 2rem;
+}
+
+.btn-ochre {
+    color: #fff;
+    background-color: #CC9900;
+    border-color: #CC9900;
+}
+
+.memory-instructions-container {
+  position: absolute;
+  bottom: 15%;
+  left: 5%;
+  z-index: 2;
+}
+
+.speaker-icon {
+  width: 50px !important;
+  height: 50px !important;
+  cursor: pointer;
 }
