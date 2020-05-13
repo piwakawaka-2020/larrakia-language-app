@@ -10,8 +10,12 @@ class Dictionary extends React.Component {
     sortForGulumirrgin: true
   }
 
-  handleClick = event => {
-    this.setState({ sortForGulumirrgin: !this.state.sortForGulumirrgin })
+  handleClickGulumirrgin = event => {
+    this.setState({ sortForGulumirrgin: true })
+  }
+  
+  handleClickEnglish = event => {
+    this.setState({ sortForGulumirrgin: false })
   }
 
   render() {
@@ -28,6 +32,10 @@ class Dictionary extends React.Component {
       return <DictionaryEntry key={word.id} word={word} />
     })
 
+    // <button type="button" className= "neuchaFont" className="btn btn-secondary btn-lg btn-block" onClick={this.handleClick}>
+    //         Sort by {this.state.sortForGulumirrgin ? "English" : "Gulumirrgin"} alphabetical order?
+    //       </button>
+
     return (
       <div className="dictionary">
         <BurgerMenu />
@@ -35,10 +43,11 @@ class Dictionary extends React.Component {
           <div className="icon-container">
             <img className="wl-icon" src="/images/longbum.png" alt="Danijarra or Long Bum" />
           </div>
-          <h1 className="text-center" className= "neuchaFont"><strong>Dictionary</strong></h1>
-          <button type="button" className= "neuchaFont" className="btn btn-secondary btn-lg btn-block" onClick={this.handleClick}>
-            Sort by {this.state.sortForGulumirrgin ? "English" : "Gulumirrgin"} alphabetical order?
-          </button>
+          <h1 className="text-center neuchaFont"><strong>Dictionary</strong></h1>
+          <div className="btn-group btn-group-toggle" data-toggle="buttons">
+            <button className="btn btn-secondary active" onClick={this.handleClickGulumirrgin}>Gulumirrgin</button>
+            <button className="btn btn-secondary active" onClick={this.handleClickEnglish}>English</button>
+          </div>
           <div className="p-5">
             {dictionaryEntries}
           </div>
