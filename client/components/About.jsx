@@ -39,11 +39,11 @@ class About extends Component {
                         
                         <div className="p-5">
                             <h2>Meet the Team</h2>
-                                <TeamCard name="Laniyuk" role="Project Director" profilePic='/images/laniyukProfile.png'/>
-                                <TeamCard name="Simone" role="Project Manager" profilePic='/images/simoneProfile.png'/>
-                                <TeamCard name="Zac" role="Git/Deployment"/>
-                                <TeamCard name="Boyd" role="Backend" profilePic='/images/boydProfile.png'/>
-                                <TeamCard name="Richard" role="Frontend" profilePic='/images/richardProfile.png'/>
+                                <TeamCard name="Laniyuk" role="Project Director" profilePic='/images/laniyukProfile.png' />
+                                <TeamCard name="Simone" role="Project Manager" profilePic='/images/simoneProfile.png' />
+                                <TeamCard name="Zac" role="Git/Deployment" profilePic='/images/zacProfile.png' />
+                                <TeamCard name="Boyd" role="Backend" profilePic='/images/boydProfile.png' />
+                                <TeamCard name="Richard" role="Frontend" profilePic='/images/richardProfile.png' />
                         </div>
                     </div>
                 </div>

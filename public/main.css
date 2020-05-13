@@ -490,3 +490,7 @@ div .app {
   width: 100%;
   height: 100%;
 }
+
+.instructions {
+  padding-left: 2rem;
+}
