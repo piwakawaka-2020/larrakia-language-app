@@ -33,15 +33,16 @@ class DictionaryEntry extends React.Component {
     return (
       <div className="card mb-3">
         <div className="row">
-          <div className="col-md-4">
-            <img src={this.props.word.imageUrl} alt={"Image of a " + this.props.word.englishWord} />
+          <div className="col-md-4 dictionary-img-container">
+            <img src={this.props.word.imageUrl} alt={"Image of a " + this.props.word.englishWord} className="dictionary-img"/>
           </div>
           <div className="col-md-8">
             <div className="card-body">
-              <h2>Gulumirrgin: {this.props.word.gulumirrginWord}</h2>
-              <h2>English: {this.props.word.englishWord}</h2>
+              <h2 className= "neuchaFont">Gulumirrgin: {this.props.word.gulumirrginWord}</h2>
+              <h2 className= "neuchaFont">English: {this.props.word.englishWord}</h2>
               {this.props.word.audioUrl !== null &&
-                <button type="button" className="btn btn-primary" onClick={this.handleClick}>Listen to Word ▶</button>
+                // <button type="button" className="btn btn-primary" onClick={this.handleClick}>Listen to Word ▶</button>
+                <img className="speaker-icon" src="/images/speaker.png" alt="Speaker Icon" onClick={this.handleClick}/>
               }
             </div>
           </div>

@@ -4,7 +4,7 @@ class Word extends React.Component {
     render() {
         const { word } = this.props
         return (
-            <h1>{word}</h1>
+            <h1 className= "neuchaFont dnd-word"><strong>{word}</strong></h1>
         )
     }
 }

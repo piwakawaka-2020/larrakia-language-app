@@ -35,7 +35,7 @@ const MainSection = props => {
           <Route path="/dictionary">
             <Dictionary />
           </Route>
-          <Route path= "/LarrakiaPeople">
+          <Route path= "/larrakiapeople">
             <LarrakiaPeople />
           </Route>
           <Route path="/game/draganddrop">

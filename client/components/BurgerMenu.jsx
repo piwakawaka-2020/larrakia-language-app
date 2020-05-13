@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { render } from 'react-dom'
 import { NavLink } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
@@ -27,14 +26,26 @@ class BurgerMenu extends React.Component {
           <div className="hamburger-line"></div>
         </div>
         <ul className={"nav-links " + (this.state.isShowing && "open")}>
-          <li><a href= "/map">Let's go back Home to Larrakia Country</a></li>
+          <li>
+            <NavLink to= "/map" activeClassName="current-page">
+              Let's go back Home to Larrakia Country
+            </NavLink>
+          </li>
           <li>
             <NavLink to="/dictionary" activeClassName="current-page">
               Gulumirrgin Dictionary for Kids
             </NavLink>
           </li>
-          <li><a href="/LarrakiaPeople">Larrakia People</a></li>
-          <li><a href="/about">About </a></li>
+          <li>
+            <NavLink to="/larrakiapeople" activeClassName="current-page">
+              Larrakia People
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/about" activeClassName="current-page">
+              About 
+            </NavLink>
+          </li>
         </ul>
       </nav>
     )
