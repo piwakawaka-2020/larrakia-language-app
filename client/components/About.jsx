@@ -10,7 +10,7 @@ class About extends Component {
                 <div className="about-page">
                     <div className="container">
                         <div className="icon-container">
-                            <img className="wl-icon" src="/images/button1.png" alt="Water Lily"/>
+                            <img className="wl-icon" src="/images/button1.png" alt="Dambilinggwa or Water Lily"/>
                         </div>
                         <h1 className="text-center">About</h1>
                         <div className="p-5">
