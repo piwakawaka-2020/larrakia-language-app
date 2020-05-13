@@ -8,6 +8,7 @@ import Backend from 'react-dnd-html5-backend'
 //Child component imports
 import DragAndDropGame from './DragAndDropGame'
 import Map from './Map'
+import LandingMap from './LandingMap'
 import BurgerMenu from './BurgerMenu'
 import MemoryGame from './MemoryGame'
 import LarrakiaPeople from './LarrakiaPeoplePage'
