@@ -12,8 +12,8 @@ class LarrakiaPeople extends React.Component {
                         <div className="icon-container">
                             <img className="wl-icon" src="/images/button2.png" alt="Dundil or Native Peanut"/>
                         </div>
-                        <h1 className="text-center">Larrakia People are Saltwater People</h1>
-                        <div className="p-5">
+                        <h1 className="text-center1" ><strong>Larrakia People are Saltwater People</strong></h1>
+                        <div className="p-4">
                         <p>We have a strong relationship with the ocean and all the animals who we share the waters with.</p>
                                 <p>We also have strong relationships with the people who live around us, like the Tiwi people, The Wogait people and the Wulna People.</p>
                                 <p>Larrakia people have lots of ceremonies and songs we share with our neighbours to make sure we stay connected and to maintain peace.</p>
