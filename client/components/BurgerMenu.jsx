@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { render } from 'react-dom'
 import { NavLink } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
@@ -33,8 +32,16 @@ class BurgerMenu extends React.Component {
               Gulumirrgin Dictionary for Kids
             </NavLink>
           </li>
-          <li><a href="/LarrakiaPeople">Larrakia People</a></li>
-          <li><a href="/about">About </a></li>
+          <li>
+            <NavLink to="/larrakiapeople" activeClassName="current-page">
+              Larrakia People
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/about" activeClassName="current-page">
+              About 
+            </NavLink>
+          </li>
         </ul>
       </nav>
     )
