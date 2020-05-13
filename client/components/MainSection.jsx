@@ -10,6 +10,9 @@ import DragAndDropGame from './DragAndDropGame'
 import Map from './Map'
 import BurgerMenu from './BurgerMenu'
 import MemoryGame from './MemoryGame'
+import LarrakiaPeople from './LarrakiaPeoplePage'
+import About from './About'
+import MatchingGame from './MatchingGame'
 
 const MainSection = props => {
   return (
@@ -17,8 +20,17 @@ const MainSection = props => {
       <Router>
         <Switch>
           <Route exact path="/">
+            <LandingMap />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/map">
             <BurgerMenu />
             <Map />
+          </Route>
+          <Route path= "/LarrakiaPeople">
+          <LarrakiaPeople />
           </Route>
           <Route path="/game/draganddrop">
             {props.words.length > 0 ? 
@@ -30,6 +42,11 @@ const MainSection = props => {
           <Route path="/game/memory">
             {props.words.length > 0 ? 
             <MemoryGame />: 
+            <div>Loading...</div> }
+          </Route>
+          <Route path="/game/matching">
+            {props.words.length > 0 ? 
+            <MatchingGame />: 
             <div>Loading...</div> }
           </Route>
         </Switch>

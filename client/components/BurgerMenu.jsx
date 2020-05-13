@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { render } from 'react-dom'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
@@ -25,9 +26,10 @@ class BurgerMenu extends React.Component {
           <div className="hamburger-line"></div>
         </div>
         <ul className={"nav-links " + (this.state.isShowing && "open")}>
+          <li><a href= "/map">Let's go back Home to Larrakia Country</a></li>
           <li><a href="#">Gulumirrgin Dictionary for Kids</a></li>
-          <li><a href="#">Larrakia People</a></li>
-          <li><a href="#">About </a></li>
+          <li><a href="/LarrakiaPeople">Larrakia People</a></li>
+          <li><a href="/about">About </a></li>
         </ul>
       </nav>
     )

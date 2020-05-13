@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 
 import MemoryGameBoard from './MemoryGameBoard'
 import WinScreen from './WinScreen'
+import Instructions from './Instructions'
+import HowToPlay from './HowToPlay'
 
 const tryAgain = 'No match, try again'
 
@@ -71,7 +73,6 @@ class MemoryGame extends React.Component {
         secondaryWords = secondaryWords.filter(word => word.id != id)
       }
     }
-    console.log(gameTiles)
     
     // randomise tile order
       while (randomisedGameTiles.length < 16) {
@@ -96,14 +97,29 @@ class MemoryGame extends React.Component {
     const hasWon = this.state.matchCount === 8
     return (
       hasWon ? <WinScreen /> :
-      <div className='memoryGame'>
-        <h1>Welcome to the Memory Game</h1>
-        <h2>Match all the tiles to win</h2>
+      <>
+        <HowToPlay>
+          <img src="/gifs/memoryGameHTP.gif" alt="memory game demo gif"/>
+        </HowToPlay>
 
-        <MemoryGameBoard tiles={this.state.tiles} evalMatch={this.evalMatch} />
+        <div className='memoryGame'>
+          <h1>Welcome to the Memory Game</h1>
+          <h2>Match all the tiles to win</h2>
 
-        <h5>{!this.state.isMatch && tryAgain}</h5>
-      </div>
+          <MemoryGameBoard tiles={this.state.tiles} evalMatch={this.evalMatch} matchCount={this.state.matchCount}/>
+
+          <h5>{!this.state.isMatch && tryAgain}</h5>
+        </div>
+
+        <Instructions>
+          <li>Flip a tile any tile</li>
+          <li>Flip another tile and see if it matches</li>
+          <li>If it dose it will stay. Then try and find another pair</li>
+          <li>If it dosen't, The tiles will stay where they are but flip back over so you will need to remeber what they were. Try again.</li>
+          <li>Matche all tiles and you win the game!</li>
+          <li>Good Luck!</li>
+        </Instructions>
+      </>
     )
   }
 }
@@ -115,5 +131,3 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps)(MemoryGame)
-
-// {id: 1, image: '/images/Banimadla.jpg', audio: '/audio/Banimadla_vMemo.mp4', isVisible: false, word: 'Banimadla'}

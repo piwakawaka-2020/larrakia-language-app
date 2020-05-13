@@ -1,6 +1,30 @@
 # Larrakia Language App
 
 ## Introduction
+### Motivation:
+
+The Larrakia Language App (LLA) has been a vision of the project director, Laniyuk, for years. As a Larrakia person, she understands the challenges of trying to learn a language with limited accessibility for daily engagement. She also understands the importance of language in the practise of culture, connection to kin and understanding of land. 
+
+As of the 2016 census there were 14 people in the city of Darwin who claimed to know the Larrakia Language (Gulumirrgin), with Larrakia people numbering around 2,000 out of a total population of 136, 828.
+
+It was her wish that an app be created that allowed Larrakia people, and those living on Larrakia Land, to have access to learning and practising Gulumirrgin while strengthening its presence in the day to day.
+
+### Goals:
+
+The Larrakia Language App For Kids brings Larrakia language to the mouths and minds of children between the ages of 7-10 through fun, interactive games.
+
+The LLA For Kids encourages the learning of animals, plants and landscape through an interactive map, games and a dictionary for children! 
+
+We hope to encourage children to maintain culture and connection with Larrakia Land through language. In time, the work done today will hopefully lead to a world in which Larrakia people are fluent in their language, have access to their culture and control over their lands.
+
+### Members:
+| Name | Role |
+| --- | --- |
+| Laniyuk | Product Owner/Creative Director |
+| Simone | Product Manager |
+| Zac | Git Lead / Deployment Lead |
+| Boyd | Backend Lead |
+| Richard | Frontend Lead |
 
 ## Technologies
 
@@ -10,7 +34,6 @@ The technologies in use:
 * [Redux](https://redux.js.org/introduction/getting-started)
 * [Express.js](https://expressjs.com/en/starter/installing.html)
 * [Knex.js](http://knexjs.org/)
-* [Passport.js](http://www.passportjs.org/docs/)
 * [Bootstrap 4](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
 * [React DnD](https://react-dnd.github.io/react-dnd/about)
 
@@ -19,39 +42,30 @@ The technologies in use:
 ## As a user:
 
 ## Landing Page
-- [ ] I want to be able to see a map of Larrakia country
-- [ ] I want to be able to click on an icon so that I can enter a game
-- [ ] I want to be able to interact with a menu burger
+- [x] I want to be able to see a map of Larrakia country
+- [x] I want to be able to click on an icon so that I can enter a game
+- [x] I want to be able to interact with a menu burger
 
 ## Game - Drag-and-drop
-- [ ] I want to be able to play a drag-and-drop image association game
-- [ ] I want to be able to be able to drag from 2 images into a box
-- [ ] I want to be able to see if my answer is correct or incorrect
-- [ ] I want to be able to see a demo of the game
-- [ ] I want to see a progress bar to see how far along in the game I am
-- [ ] I want to be able to see a win page
-- [ ] I want to be able to go back to the landing page when I am done
+- [x] I want to be able to play a drag-and-drop image association game
+- [x] I want to be able to be able to drag from 2 images into a box
+- [x] I want to be able to see if my answer is correct or incorrect
+- [x] I want to be able to see a demo of the game
+- [x] I want to see a progress bar to see how far along in the game I am
+- [x] I want to be able to see a win page
+- [x] I want to be able to go back to the landing page when I am done
 
 ## MVP Stretch
 
 ## As a user:
 
-## Landing Page
-- [ ] I want to be able to see the names of cities on a map
-- [ ] I want to be able to see a greyed out version of the icon of a game I have already played
-
 ## Game - Memory Game
-- [ ] I want to be able to flip tiles to match
-- [ ] I want to be able to see a demo of how to play the game
-- [ ] I want to be able to see a win page
+- [x] I want to be able to flip tiles to match
+- [x] I want to be able to see a demo of how to play the game
+- [x] I want to be able to see a win page
 
 ## Other
 - [ ] I want to be able to see a loading screen
-
-## Stretch
-
-## As a user:
-TBD
 
 ## Views (Client Side)
 ## MVP

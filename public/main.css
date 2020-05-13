@@ -83,6 +83,10 @@ body {
     transition: all 0.5s ease 0.6s;
 }
 
+.nav-links li:nth-child(4){
+  transition: all 0.5s ease 0.8s;
+}
+
 .nav-links.open li {
     opacity: 1;
 }
@@ -175,8 +179,6 @@ div .app {
 .dnd-image {
   height: 500px;
   width: 500px;
-
-  user-drag: none; 
   user-select: none;
   -moz-user-select: none;
   -webkit-user-drag: none;
@@ -218,6 +220,7 @@ div .app {
   align-items: center;
 }
 
+/* map styles */
 #mapContainer {
   position: relative;
 }
@@ -229,8 +232,8 @@ div .app {
 
 #button-dragAndDropGame {
   position: absolute;
-  top: 30%;
-  left: 20%;
+  bottom: 25%;
+  left: 35%;
   cursor: pointer;
   width: 200px;
   height: 200px;
@@ -238,8 +241,17 @@ div .app {
 
 #button-memoryGame {
   position: absolute;
-  bottom: 30%;
-  right: 20%;
+  bottom: 40%;
+  right: 40%;
+  cursor: pointer;
+  width: 200px;
+  height:200px;
+}
+
+#button-matchingGame {
+  position: absolute;
+  top: 30%;
+  left: 35%;
   cursor: pointer;
   width: 200px;
   height:200px;
@@ -248,6 +260,41 @@ div .app {
 .button-image {
   width: 100%;
   height: 100%;
+  transition: all .2s ease-in-out;
+}
+
+.button-image:hover {
+  transform: scale(1.2);
+}
+
+#map-title {
+  font-family: 'Paytone One', sans-serif;
+  position: absolute;
+  bottom: 25%;
+  right: 2%;
+}
+
+.for-kids {
+  font-family: 'Neucha';
+}
+
+#landing-title {
+  font-family: 'Paytone One', sans-serif;
+  position: absolute;
+  top: 5%;
+  left: 14%;
+}
+
+/* memory game styles */
+.llaLanding {
+  text-align:left;float:left;
+  font-size: 60px;
+}
+
+.for-kidslanding {
+  text-align:right;float:right;
+  font-family: 'Neucha';
+  font-size: 60px;
 }
 
 .memoryGame {
@@ -275,4 +322,125 @@ div .app {
   vertical-align: top;
   width: 100%;
   height: 100%;
+}
+
+/* landing page styles */
+#landingMapContainer {
+  position: relative;
+}
+
+#landingMapImage {
+  width: 100%;
+  height: 100%;
+}
+
+#button-enterApp{
+  position: absolute;
+  top: 22%;
+  left: 35%;
+  cursor: pointer;
+  width: 100px;
+  height:100px;
+}
+
+#welcomeBox{
+  position: absolute;
+  bottom: 35%;
+  left: 25%;
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  max-width: 600px;
+  max-height: 600px;
+}
+
+.box-image {
+  width: 100%;
+  height: 100%;
+}
+
+/* matching game styles */
+.matching-game-title{
+  text-align: center;
+  font-family: 'Neucha';
+}
+
+.matching-game-container{
+  position: relative;
+  width: 750px;
+  height: 680px;
+  margin: auto;
+}
+
+.matching-game-image-container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.matching-game-word-container{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.matching-game-instructions-container{
+  position: absolute;
+  top: 0;
+  left: -55%;
+  z-index: 2;
+}
+
+.matching-game-item{
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+  background-color: #9606c8;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.matching-game-item h4 {
+  color: #cc9900;
+}
+
+.matching-game-item img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.team-card {
+  max-width: 540px;
+}
+
+.team-card:hover {
+  transition: 2s;
+  left: 0;
+}
+
+.about-page {
+  padding: 3rem 0;
+  font-size: 20px;
+}
+
+.about-container {
+  background-color: white;
+}
+
+.rounding {
+  border-radius: 30px;
+}
+
+.wl-icon {
+  width: 200px;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
 }
