@@ -9,6 +9,7 @@ import MatchingGameWord from './MatchingGameWord'
 import WinScreen from './WinScreen'
 import MatchingGameLine from './MatchingGameLine'
 import HowToPlay from './HowToPlay'
+import HomeButton from './HomeButton'
 
 export class MatchingGame extends React.Component {
 
@@ -121,7 +122,8 @@ export class MatchingGame extends React.Component {
     const hasWon = this.state.currentScore === 3
     return (
       hasWon ? <WinScreen /> :
-      <>        
+      <>
+        <HomeButton />        
         <HowToPlay>
           <p>incert gif here</p>
         </HowToPlay>
