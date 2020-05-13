@@ -10,8 +10,12 @@ class Dictionary extends React.Component {
     sortForGulumirrgin: true
   }
 
-  handleClick = event => {
-    this.setState({ sortForGulumirrgin: !this.state.sortForGulumirrgin })
+  handleClickGulumirrgin = event => {
+    this.setState({ sortForGulumirrgin: true })
+  }
+
+  handleClickEnglish = event => {
+    this.setState({ sortForGulumirrgin: false })
   }
 
   render() {
@@ -35,10 +39,13 @@ class Dictionary extends React.Component {
           <div className="icon-container">
             <img className="wl-icon" src="/images/longbum.png" alt="Danijarra or Long Bum" />
           </div>
-          <h1 className="text-center" className= "neuchaFont"><strong>Dictionary</strong></h1>
-          <button type="button" className="btn btn-secondary btn-lg btn-block neuchaFont"  onClick={this.handleClick}>
-            Sort by {this.state.sortForGulumirrgin ? "English" : "Gulumirrgin"} alphabetical order?
-          </button>
+          <h1 className="text-center neuchaFont"><strong>Dictionary</strong></h1>
+          <div classname="row justify-content-center">
+            <div className="col btn-group btn-group-toggle" data-toggle="buttons">
+              <button className="w-50 btn btn-primary btn-lg border-dark neuchaFont" onClick={this.handleClickGulumirrgin}>Sort in Gulumirrgin</button>
+              <button className="w-50 btn btn-secondary btn-lg border-dark neuchaFont" onClick={this.handleClickEnglish}>Sort in English</button>
+            </div>
+          </div>
           <div className="p-5">
             {dictionaryEntries}
           </div>
