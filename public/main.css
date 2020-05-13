@@ -83,6 +83,10 @@ body {
     transition: all 0.5s ease 0.6s;
 }
 
+.nav-links li:nth-child(4){
+  transition: all 0.5s ease 0.8s;
+}
+
 .nav-links.open li {
     opacity: 1;
 }
@@ -112,9 +116,6 @@ div .app {
     height: 100vh;
 }
 
-.container blue-container {
-  background-color: blue;
-}
 .center-align {
     display: flex;
     align-items: center;
@@ -178,8 +179,6 @@ div .app {
 .dnd-image {
   height: 500px;
   width: 500px;
-
-  user-drag: none; 
   user-select: none;
   -moz-user-select: none;
   -webkit-user-drag: none;
@@ -221,6 +220,7 @@ div .app {
   align-items: center;
 }
 
+/* map styles */
 #mapContainer {
   position: relative;
 }
@@ -257,7 +257,6 @@ div .app {
   height:200px;
 }
 
-
 .button-image {
   width: 100%;
   height: 100%;
@@ -275,13 +274,8 @@ div .app {
   right: 2%;
 }
 
-.mapTitle {
-  font-size: 50px;
-}
-
 .for-kids {
   font-family: 'Neucha';
-  font-size: 50px;
 }
 
 #landing-title {
@@ -302,9 +296,11 @@ div .app {
   font-size: 60px;
 }
 
+/* memory game styles */
 .memoryGame {
   text-align: center;
   justify-content: center;
+  font-family: 'Neucha';
 }
 
 .memoryGameTiles {
@@ -330,6 +326,7 @@ div .app {
   height: 100%;
 }
 
+/* landing page styles */
 #landingMapContainer {
   position: relative;
 }
@@ -341,8 +338,8 @@ div .app {
 
 #button-enterApp{
   position: absolute;
-  top: 21%;
-  left: 36%;
+  top: 22%;
+  left: 35%;
   cursor: pointer;
   width: 100px;
   height:100px;
@@ -353,15 +350,70 @@ div .app {
   bottom: 35%;
   left: 25%;
   cursor: pointer;
-  height: auto; 
-  width: auto; 
-  max-width: 600px; 
+  width: auto;
+  height: auto;
+  max-width: 600px;
   max-height: 600px;
 }
 
 .box-image {
   width: 100%;
   height: 100%;
+}
+
+/* matching game styles */
+.matching-game-title{
+  text-align: center;
+  font-family: 'Neucha';
+}
+
+.matching-game-container{
+  position: relative;
+  width: 750px;
+  height: 680px;
+  margin: auto;
+}
+
+.matching-game-image-container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.matching-game-word-container{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.matching-game-instructions-container{
+  position: absolute;
+  top: 0;
+  left: -55%;
+  z-index: 2;
+}
+
+.matching-game-item{
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+  background-color: #9606c8;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.matching-game-item h4 {
+  color: #cc9900;
+}
+
+.matching-game-item img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
 
 .team-card {
@@ -378,13 +430,16 @@ div .app {
   font-size: 20px;
 }
 
+.about-container {
+  background-color: white;
+}
+
 .rounding {
   border-radius: 30px;
 }
 
 .wl-icon {
   width: 200px;
-  height: auto;
 }
 
 .icon-container {
@@ -393,9 +448,16 @@ div .app {
   padding: 5rem;
 }
 
+#loading-gif {
+  margin-top: 50px;
+}
+
 .border-size {
   width: 150%;
   height: 200%;
 }
 
-
+.dictionary .card img {
+  width: 100%;
+  height: 100%;
+}
