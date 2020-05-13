@@ -32,10 +32,6 @@ class Dictionary extends React.Component {
       return <DictionaryEntry key={word.id} word={word} />
     })
 
-    // <button type="button" className= "neuchaFont" className="btn btn-secondary btn-lg btn-block" onClick={this.handleClick}>
-    //         Sort by {this.state.sortForGulumirrgin ? "English" : "Gulumirrgin"} alphabetical order?
-    //       </button>
-
     return (
       <div className="dictionary">
         <BurgerMenu />
@@ -46,8 +42,8 @@ class Dictionary extends React.Component {
           <h1 className="text-center neuchaFont"><strong>Dictionary</strong></h1>
           <div classname="row justify-content-center">
             <div className="col btn-group btn-group-toggle" data-toggle="buttons">
-              <button className="w-50 btn btn-secondary btn-lg neuchaFont" onClick={this.handleClickGulumirrgin}>Sort in Gulumirrgin</button>
-              <button className="w-50 btn btn-secondary btn-lg neuchaFont" onClick={this.handleClickEnglish}>Sort in English</button>
+              <button className="w-50 btn btn-primary btn-lg border-dark neuchaFont" onClick={this.handleClickGulumirrgin}>Sort in Gulumirrgin</button>
+              <button className="w-50 btn btn-secondary btn-lg border-dark neuchaFont" onClick={this.handleClickEnglish}>Sort in English</button>
             </div>
           </div>
           <div className="p-5">

@@ -31,7 +31,7 @@ class DictionaryEntry extends React.Component {
 
   render() {
     return (
-      <div className="card mb-3 border-dark">
+      <div className="card mb-3">
         <div className="row">
           <div className="col-md-4 dictionary-img-container">
             <img src={this.props.word.imageUrl} alt={"Image of a " + this.props.word.englishWord} className="dictionary-img"/>

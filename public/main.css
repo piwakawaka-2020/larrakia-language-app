@@ -551,10 +551,15 @@ div .app {
   border-radius: 20px;
 }
 
-.btn-secondary {
+.dictionary .btn-secondary {
   color: #663333 !important;
   background-color: #cc9900 !important;
   border-color: #CC9900 !important;
+}
+
+.dictionary .btn-primary {
+  background-color: #663333 !important;
+  border-color: #663333 !important;
 }
 
 .btn-ochre {
