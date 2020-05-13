@@ -285,7 +285,6 @@ div .app {
   left: 14%;
 }
 
-/* memory game styles */
 .llaLanding {
   text-align:left;float:left;
   font-size: 60px;
@@ -297,9 +296,11 @@ div .app {
   font-size: 60px;
 }
 
+/* memory game styles */
 .memoryGame {
   text-align: center;
   justify-content: center;
+  font-family: 'Neucha';
 }
 
 .memoryGameTiles {
