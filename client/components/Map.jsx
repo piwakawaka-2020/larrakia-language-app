@@ -32,7 +32,6 @@ export class Map extends React.Component {
           <h1 className= 'mapTitle'>The</h1>
           <h1 className= 'mapTitle'>Larrakia</h1>
           <h1 className= 'mapTitle'>Language</h1> 
-          <h1 className= 'mapTitle'>Larrakia</h1>
           <h1 className= 'mapTitle'>App</h1>
           <h1 className='for-kids'>For Kids</h1>
         </div>

@@ -13,6 +13,7 @@ import SuccessTick from './SuccessTick'
 import FailureIndicator from './FailureIndicator'
 import Instructions from './Instructions'
 import HowToPlay from './HowToPlay'
+import HomeButton from './HomeButton'
 
 
 class DragAndDropGame extends Component {
@@ -96,6 +97,7 @@ class DragAndDropGame extends Component {
                 <HowToPlay>
                     <img src="/gifs/dndGameHTP.gif" alt="Drag and drop game demo gif"/>
                 </HowToPlay>
+                <HomeButton />
                 {this.state.gameWin < 10 ? 
                     <div className="container-fluid h-100">
                     <div className="row main-word">
