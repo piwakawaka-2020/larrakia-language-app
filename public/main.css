@@ -446,3 +446,7 @@ div .app {
   display: flex;
   justify-content: center;
 }
+
+#loading-gif {
+  margin-top: 50px;
+}
