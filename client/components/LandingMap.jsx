@@ -8,7 +8,8 @@ export class LandingMap extends React.Component {
         <>
             <div id="landingMapContainer">
                 <div id="landing-title">
-                  <h1 className='llaLanding'>Larrakia Language App <span className='for-kidslanding'>&nbsp;For Kids</span></h1>
+                    <h1 className='llaLanding'>Larrakia Language App</h1>
+                    <h1 className='for-kidslanding'>&nbsp;For Kids</h1>
                 </div>
                 <img id="landingMapImage" src='/images/map.png' alt='Northern Australia map image'/>
                 <Link to="/map">
