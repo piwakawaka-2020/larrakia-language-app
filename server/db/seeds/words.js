@@ -5,7 +5,7 @@ exports.seed = function(knex) {
       return knex('words').insert([
         {gulumirrgin_word: 'Banimadla', english_word: 'Long-necked Turtle', category: 'animals', audio_url: '/audio/Banimadla_Edited.mp4', image_url: '/images/Banimadla.jpg' },
         {gulumirrgin_word: 'Damabila', english_word: 'Barramundi', category: 'animals', audio_url: '/audio/Damabila_Edited.mp4', image_url: '/images/Damabila.jpg' },
-        {gulumirrgin_word: 'Danggalaba', english_word: 'Saltwater Crocodile', category: 'animals', audio_url: '', image_url: '/images/Danggalaba.jpg' },
+        {gulumirrgin_word: 'Danggalaba', english_word: 'Saltwater Crocodile', category: 'animals', image_url: '/images/Danggalaba.jpg' },
         {gulumirrgin_word: 'Danijarra', english_word: 'Long Bums', category: 'animals', audio_url: '/audio/Danijarra_Edited.mp4', image_url: '/images/Danijarra.jpg' },
         {gulumirrgin_word: 'Datlawa', english_word: 'Frilled neck Lizard', category: 'animals', audio_url: '/audio/Datlawa_Edited.mp4', image_url: '/images/Datlawa.jpg' },
         {gulumirrgin_word: 'Betbiyan', english_word: 'Flatback turtle', category: 'animals', audio_url:'/audio/Betbiyan_Edited.mp4', image_url: '/images/Betbiyan.jpg' },
