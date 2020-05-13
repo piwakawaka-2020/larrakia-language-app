@@ -90,7 +90,9 @@ body {
 .nav-links.open li {
     opacity: 1;
 }
-/*END - CSS Style rules for menu burger - END */
+/* END - CSS Style rules for menu burger - END */
+
+/* CSS Style rules for Drop and drag game */
 
 div .app {
     height: 90vh;
@@ -126,59 +128,6 @@ div .app {
     justify-content: center;
     flex-direction: column;
 }
-
-/* CSS Style Rules for Checkmark */
-.checkmark {
-  position: absolute;
-  padding: 0;
-  margin: 0;
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  display: block;
-  stroke-width: 2;
-  stroke: #fff;
-  stroke-miterlimit: 10;
-  box-shadow: inset 0px 0px 0px #7ac142;
-  animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
-}
-
-.checkmark-circle {
-  stroke-dasharray: 216;
-  stroke-dashoffset: 216;
-  stroke-width: 2;
-  stroke-miterlimit: 10;
-  stroke: #7ac142;
-  fill: none;
-  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
-}
-
-.checkmark-check {
-  transform-origin: 50% 50%;
-  stroke-dasharray: 98;
-  stroke-dashoffset: 98;
-  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
-}
-
-@keyframes stroke {
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-@keyframes scale {
-  0%, 100% {
-    transform: none;
-  }
-  50% {
-    transform: scale3d(1.1, 1.1, 1);
-  }
-}
-@keyframes fill {
-  100% {
-    box-shadow: inset 0px 0px 0px 80px #7ac142;
-  }
-}
-/* END - CSS Style rules for checkmark - END */
 
 .dnd-image {
   height: 400px;
@@ -250,8 +199,62 @@ div .app {
   justify-content: center;
   align-items: center;
 }
+/* END - CSS Style rules for Drop and drag game */
 
-/* map styles */
+/* CSS Style Rules for Checkmark */
+.checkmark {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  box-shadow: inset 0px 0px 0px #7ac142;
+  animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkmark-circle {
+  stroke-dasharray: 216;
+  stroke-dashoffset: 216;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #7ac142;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark-check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 98;
+  stroke-dashoffset: 98;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 80px #7ac142;
+  }
+}
+/* END - CSS Style rules for checkmark - END */
+
+/* CSS Styles for Larrakia map page  */
 #mapContainer {
   position: relative;
   display: flex;
@@ -311,7 +314,9 @@ div .app {
 .for-kids {
   font-family: 'Neucha';
 }
+/* END -  CSS Styles for Larrakia map page  */
 
+/* CSS Styles for Landing map page  */
 #landing-title {
   font-family: 'Paytone One', sans-serif;
   position: absolute;
@@ -330,7 +335,43 @@ div .app {
   font-size: 60px;
 }
 
-/* memory game styles */
+  #landingMapContainer {
+    position: relative;
+  }
+  
+  #landingMapImage {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  #button-enterApp{
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    cursor: pointer;
+    width: 100px;
+    height:100px;
+    z-index: 2;
+  }
+  
+  #welcomeBox{
+    position: absolute;
+    bottom: 30%;
+    left: 28%;
+    width: auto;
+    height: auto;
+    max-width: 400px;
+    max-height: 400px;
+    z-index: 1;
+  }
+  
+  .box-image {
+    width: 100%;
+    height: 100%;
+  }
+/* END -  CSS Styles for Landing map page  */
+
+/* CSS Styles for memory game  */
 .memoryGame {
   text-align: center;
   justify-content: center;
@@ -361,43 +402,16 @@ div .app {
   height: 100%;
 }
 
-/* landing page styles */
-#landingMapContainer {
-  position: relative;
-}
-
-#landingMapImage {
-  width: 100vw;
-  height: 100vh;
-}
-
-#button-enterApp{
+.memory-instructions-container {
   position: absolute;
-  top: 20%;
-  left: 35%;
-  cursor: pointer;
-  width: 100px;
-  height:100px;
+  bottom: 15%;
+  left: 5%;
   z-index: 2;
 }
 
-#welcomeBox{
-  position: absolute;
-  bottom: 30%;
-  left: 28%;
-  width: auto;
-  height: auto;
-  max-width: 400px;
-  max-height: 400px;
-  z-index: 1;
-}
+/* END -  CSS Styles for memory game  */
 
-.box-image {
-  width: 100%;
-  height: 100%;
-}
-
-/* matching game styles */
+/* CSS Styles for matching game */
 .matching-game-title{
   text-align: center;
   font-family: 'Neucha';
@@ -452,7 +466,9 @@ div .app {
   height: 100%;
   border-radius: 20px;
 }
+/* END -  CSS Styles for matching game */
 
+/*  CSS Styles for about page */
 .team-card {
   max-width: 540px;
 }
@@ -484,7 +500,9 @@ div .app {
   justify-content: center;
   padding: 5rem;
 }
+/* END -  CSS Styles for about page */
 
+/* CSS Style for home button */
 .home-button {
   position: fixed;
   width: 5rem;
@@ -509,11 +527,9 @@ div .app {
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
+/* END - CSS Styles for home button */
 
-#loading-gif {
-  margin-top: 50px;
-}
-
+/* CSS Styles for dictionary page */
 .border-size {
   width: 150%;
   height: 200%;
@@ -535,6 +551,20 @@ div .app {
   border-radius: 20px;
 }
 
+.btn-secondary {
+  color: #663333 !important;
+  background-color: #cc9900 !important;
+  border-color: #CC9900 !important;
+}
+
+.btn-ochre {
+    color: #fff;
+    background-color: #CC9900;
+    border-color: #CC9900;
+}
+/* CSS Styles for dictionary page */ 
+
+
 .neuchaFont {
   font-family: 'Neucha';
 }
@@ -546,26 +576,6 @@ li {
 .instructions {
   padding-left: 2rem;
 }
-
-.btn-ochre {
-    color: #fff;
-    background-color: #CC9900;
-    border-color: #CC9900;
-}
-
-.memory-instructions-container {
-  position: absolute;
-  bottom: 15%;
-  left: 5%;
-  z-index: 2;
-}
-
-.speaker-icon {
-  width: 50px !important;
-  height: 50px !important;
-  cursor: pointer;
-}
-
 .text-center1{
   text-align: center;
   font-family:"Neucha";
@@ -574,4 +584,17 @@ li {
 .p-4 {
   font-family:"Neucha";
   
+}
+
+
+
+
+.speaker-icon {
+  width: 50px !important;
+  height: 50px !important;
+  cursor: pointer;
+}
+
+#loading-gif {
+  margin-top: 50px;
 }
