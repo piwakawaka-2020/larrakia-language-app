@@ -55,7 +55,7 @@ The technologies in use:
 - [x] I want to be able to see a win page
 - [x] I want to be able to go back to the landing page when I am done
 
-## MVP Stretch
+## Stretch
 
 ## As a user:
 
@@ -65,7 +65,7 @@ The technologies in use:
 - [x] I want to be able to see a win page
 
 ## Other
-- [ ] I want to be able to see a loading screen
+- [x] I want to be able to see a loading screen
 
 ## Views (Client Side)
 ## MVP
@@ -108,3 +108,8 @@ The technologies in use:
 | category | String |
 | image_url | String |
 | audio_url | String |
+
+
+## Workflow
+### Kanban Board
+![Image of Trello board](./public/images/trelloboard.png)
