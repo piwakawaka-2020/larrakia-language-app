@@ -103,7 +103,7 @@ class MemoryGame extends React.Component {
         </HowToPlay>
 
         <div className='memoryGame'>
-          <h1>Welcome to the Memory Game</h1>
+          <h1><strong>Welcome to the Memory Game</strong></h1>
           <h2>Match all the tiles to win</h2>
 
           <MemoryGameBoard tiles={this.state.tiles} evalMatch={this.evalMatch} matchCount={this.state.matchCount}/>
@@ -111,7 +111,7 @@ class MemoryGame extends React.Component {
           <h5>{!this.state.isMatch && tryAgain}</h5>
         </div>
 
-        <Instructions>
+        <Instructions >
           <li>Flip a tile any tile</li>
           <li>Flip another tile and see if it matches</li>
           <li>If it dose it will stay. Then try and find another pair</li>

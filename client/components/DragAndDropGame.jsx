@@ -99,7 +99,7 @@ class DragAndDropGame extends Component {
                 {this.state.gameWin < 10 ? 
                     <div className="container-fluid h-100">
                     <div className="row main-word">
-                        <div className="mx-auto">
+                        <div className="mx-auto" >
                             <Word key={wordOne.id} word={this.state.displayedWord} />
                         </div>
                     </div>

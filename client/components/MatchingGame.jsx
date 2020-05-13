@@ -125,7 +125,7 @@ export class MatchingGame extends React.Component {
         <HowToPlay>
           <p>incert gif here</p>
         </HowToPlay>
-        <h1 className='matching-game-title'>Matching Game</h1>
+        <h1 className='matching-game-title'><strong>Matching Game</strong></h1>
         <div className='matching-game-container'>
           <svg width={750} height={680}>
             {
@@ -161,7 +161,7 @@ export class MatchingGame extends React.Component {
               />)
             }
           </div>
-          <div className='matching-game-instructions-container'>
+          <div className='matching-game-instructions-container' >
             <Instructions>
               <li>Select a word or image</li>
               <li>Select the word or image that matches</li>
