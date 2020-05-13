@@ -4,7 +4,7 @@ const Instructions = ({ children }) => {
     return (
         <div className="instructions">
             <h3>How to Play:</h3>
-            <ol className="">
+            <ol>
                 {/* Wrap <li> tags with <Instructions> tags */}
                 {children}
             </ol>
