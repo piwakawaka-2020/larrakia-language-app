@@ -21,7 +21,8 @@ export class MatchingGame extends React.Component {
     selectedImage: "a",
     selectedWord: "b",
     completedPairs: [],
-    lines: []
+    lines: [],
+    lastSoundPlayed: (new Date()).getTime()
   }
 
   componentDidMount() {
@@ -93,6 +94,7 @@ export class MatchingGame extends React.Component {
       completedPairs: [...this.state.completedPairs, id]
     }) 
     this.drawLine(id)
+    this.checkHasSound(id)
   }
 
   // draws line between correct items
@@ -115,6 +117,32 @@ export class MatchingGame extends React.Component {
     // push to state 
     this.setState({
       lines: [...this.state.lines, lineObj]
+    })
+  }
+
+  // checks if word has sound
+  checkHasSound(id) {
+    const wordObj = this.state.wordList.find(word => word.id == id)
+    wordObj.audioUrl != null && this.canPlaySound() && this.playSound(wordObj)
+  }
+
+  // checks if threshold has been based since last played sound
+  canPlaySound() {
+    const currentTime = (new Date()).getTime()
+    const threshold = 3000
+    return this.state.currentScore < 2 && currentTime > (this.state.lastSoundPlayed + threshold)
+  }
+
+  // plays sound of successfull pair
+  playSound (word) {
+    const wordSound = new Audio()
+    // create sound object
+    wordSound.src = word.audioUrl
+    // call sound object
+    wordSound.play()
+    // change state to time of laste played sound
+    this.setState({
+      lastSoundPlayed: (new Date()).getTime()
     })
   }
 
