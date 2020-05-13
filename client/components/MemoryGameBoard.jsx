@@ -57,7 +57,7 @@ class MemoryGameBoard extends React.Component {
 
   canPlaySound() {
     const currentTime = (new Date()).getTime()
-    const threshold = 8000
+    const threshold = 3000
     return this.props.matchCount < 7 && currentTime > (this.state.lastSoundPlayed + threshold)
   }
 

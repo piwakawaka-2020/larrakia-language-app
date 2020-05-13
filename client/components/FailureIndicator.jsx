@@ -3,7 +3,9 @@ import React from 'react'
 const FailureIndicator = () => {
 
     return (
-        <h3 className='fail-message'>Try Again!</h3>
+        <div className="fail-container">
+            <h3 className='fail-message' className= "neuchaFont">Try Again!</h3>
+        </div>
     )
 }
 
