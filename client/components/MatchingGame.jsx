@@ -21,7 +21,8 @@ export class MatchingGame extends React.Component {
     selectedImage: "a",
     selectedWord: "b",
     completedPairs: [],
-    lines: []
+    lines: [],
+    lastSoundPlayed: (new Date()).getTime()
   }
 
   componentDidMount() {
@@ -93,6 +94,7 @@ export class MatchingGame extends React.Component {
       completedPairs: [...this.state.completedPairs, id]
     }) 
     this.drawLine(id)
+    this.checkHasSound(id)
   }
 
   // draws line between correct items
@@ -118,63 +120,91 @@ export class MatchingGame extends React.Component {
     })
   }
 
+  // checks if word has sound
+  checkHasSound(id) {
+    const wordObj = this.state.wordList.find(word => word.id == id)
+    wordObj.audioUrl != null && this.canPlaySound() && this.playSound(wordObj)
+  }
+
+  // checks if threshold has been based since last played sound
+  canPlaySound() {
+    const currentTime = (new Date()).getTime()
+    const threshold = 3000
+    return this.state.currentScore < 2 && currentTime > (this.state.lastSoundPlayed + threshold)
+  }
+
+  // plays sound of successfull pair
+  playSound (word) {
+    const wordSound = new Audio()
+    // create sound object
+    wordSound.src = word.audioUrl
+    // call sound object
+    wordSound.play()
+    // change state to time of laste played sound
+    this.setState({
+      lastSoundPlayed: (new Date()).getTime()
+    })
+  }
+
   render(){
     const hasWon = this.state.currentScore === 3
     return (
-      hasWon ? <WinScreen /> :
-      <>
-        <HomeButton />        
-        <HowToPlay>
-          <img src="/gifs/matchingGameHTP.gif" alt="Matching game demo gif"/>
-        </HowToPlay>
-        <h1 className='matching-game-title'><strong>Matching Game</strong></h1>
-        <div className='matching-game-container'>
-          <svg width={750} height={680}>
-            {
-              this.state.lines.map((line, index) => 
-              <MatchingGameLine 
-                key={index}
-                x1={line.x1}
-                y1={line.y1}
-                x2={line.x2}
-                y2={line.y2}
-              />)
-            }
-          </svg>
-          <div className='matching-game-image-container'>
-            {
-              this.state.imageList.map(listItem => 
-              <MatchingGameImage 
-                key={`i${listItem.id}`} 
-                id={listItem.id} 
-                image={listItem.imageUrl} 
-                click={this.handleImageClick.bind(this)}
-              />)
-            }
+      <div>
+        <HomeButton /> 
+        {hasWon ? <WinScreen /> :
+        <>       
+          <HowToPlay>
+            <img src="/gifs/matchingGameHTP.gif" alt="Matching game demo gif"/>
+          </HowToPlay>
+          <h1 className='matching-game-title'><strong>Matching Game</strong></h1>
+          <div className='matching-game-container'>
+            <svg width={750} height={680}>
+              {
+                this.state.lines.map((line, index) => 
+                <MatchingGameLine 
+                  key={index}
+                  x1={line.x1}
+                  y1={line.y1}
+                  x2={line.x2}
+                  y2={line.y2}
+                />)
+              }
+            </svg>
+            <div className='matching-game-image-container'>
+              {
+                this.state.imageList.map(listItem => 
+                <MatchingGameImage 
+                  key={`i${listItem.id}`} 
+                  id={listItem.id} 
+                  image={listItem.imageUrl} 
+                  click={this.handleImageClick.bind(this)}
+                />)
+              }
+            </div>
+            <div className='matching-game-word-container'>
+              {
+                this.state.wordList.map(listItem => 
+                <MatchingGameWord 
+                  key={`i${listItem.id}`} 
+                  id={listItem.id} 
+                  word={listItem.gulumirrginWord} 
+                  click={this.handleWordClick.bind(this)}
+                />)
+              }
+            </div>
+            <div className='matching-game-instructions-container' >
+              <Instructions>
+                <li>Select a word or image</li>
+                <li>Select the word or image that matches</li>
+                <li>If they match a line will link them</li>
+                <li>If they dont try again</li>
+                <li>Link them all to win the game</li>
+              </Instructions>
+            </div>
           </div>
-          <div className='matching-game-word-container'>
-            {
-              this.state.wordList.map(listItem => 
-              <MatchingGameWord 
-                key={`i${listItem.id}`} 
-                id={listItem.id} 
-                word={listItem.gulumirrginWord} 
-                click={this.handleWordClick.bind(this)}
-              />)
-            }
-          </div>
-          <div className='matching-game-instructions-container' >
-            <Instructions>
-              <li>Select a word or image</li>
-              <li>Select the word or image that matches</li>
-              <li>If they match a line will link them</li>
-              <li>If they dont try again</li>
-              <li>Link them all to win the game</li>
-            </Instructions>
-          </div>
-        </div>
-        <ProgressBar currentScore={this.state.currentScore} scoreToWin={this.state.scoreToWin}/>
-      </>
+          <ProgressBar currentScore={this.state.currentScore} scoreToWin={this.state.scoreToWin}/>
+        </>}
+      </div>
     )
   }
 

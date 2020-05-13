@@ -26,8 +26,10 @@ const Image =  ({
     const opacity = isDragging ? 0.4 : 1
     const cursor = isDragging ? 'grabbing' : 'grab'
     return (
-        <div ref={drag} style={{opacity, cursor}} className="image-drag">
-            <img src={image} alt={word} className="dnd-image"/>
+        <div className="dnd-background">
+            <div ref={drag} style={{opacity, cursor}} className="image-drag">
+                <img src={image} alt={word} className="dnd-image"/>
+            </div>
         </div>
     )
 }
