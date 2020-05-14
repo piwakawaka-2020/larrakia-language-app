@@ -28,16 +28,21 @@ class MemoryGameBoard extends React.Component {
       })
       return
     }
-
+    // prevent false update if double clicked
+    else if (tile === tile1) {
+      return
+    } 
     // if the second tile is being flipped
-    this.setState({
-      tile2: tile
-    }, this.processPair)
+    else {
+      this.setState({
+        tile2: tile
+      }, this.processPair)
+    }
   }
 
   processPair () {
     const {tile1, tile2} = this.state
-    const isMatch = tile1.word === tile2.word
+    const isMatch = tile1.word === tile2.word && tile1 !== tile2
 
     const processSelectedTiles = () => {
       this.setState({
