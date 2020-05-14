@@ -28,11 +28,16 @@ class MemoryGameBoard extends React.Component {
       })
       return
     }
-
+    // prevent false update if double clicked
+    else if (tile === tile1) {
+      return
+    } 
     // if the second tile is being flipped
-    this.setState({
-      tile2: tile
-    }, this.processPair)
+    else {
+      this.setState({
+        tile2: tile
+      }, this.processPair)
+    }
   }
 
   processPair () {
