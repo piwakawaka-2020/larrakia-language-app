@@ -37,7 +37,7 @@ class MemoryGameBoard extends React.Component {
 
   processPair () {
     const {tile1, tile2} = this.state
-    const isMatch = tile1.word === tile2.word
+    const isMatch = tile1.word === tile2.word && tile1 !== tile2
 
     const processSelectedTiles = () => {
       this.setState({
