@@ -170,6 +170,7 @@ export class MatchingGame extends React.Component {
                 />)
               }
             </svg>
+            {this.state.completedPairs.map((lineto, index) => )}
             <div className='matching-game-image-container'>
               {
                 this.state.imageList.map(listItem => 
