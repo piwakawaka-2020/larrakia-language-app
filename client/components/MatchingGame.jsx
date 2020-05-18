@@ -10,6 +10,7 @@ import WinScreen from './WinScreen'
 import MatchingGameLine from './MatchingGameLine'
 import HowToPlay from './HowToPlay'
 import HomeButton from './HomeButton'
+import LineTo from 'react-lineto'
 
 export class MatchingGame extends React.Component {
 
@@ -158,7 +159,7 @@ export class MatchingGame extends React.Component {
           </HowToPlay>
           <h1 className='matching-game-title'><strong>Matching Game</strong></h1>
           <div className='matching-game-container'>
-            <svg width={750} height={680}>
+            {/* <svg width={750} height={680}>
               {
                 this.state.lines.map((line, index) => 
                 <MatchingGameLine 
@@ -169,8 +170,16 @@ export class MatchingGame extends React.Component {
                   y2={line.y2}
                 />)
               }
-            </svg>
-            {this.state.completedPairs.map((lineto, index) => )}
+            </svg> */}
+            {
+              this.state.completedPairs.map((lineto, index) => 
+              <LineTo 
+                from={`i${lineto}`} 
+                to={`w${lineto}`} 
+                key={index} 
+                borderWidth={10}
+              />)
+            }
             <div className='matching-game-image-container'>
               {
                 this.state.imageList.map(listItem => 
