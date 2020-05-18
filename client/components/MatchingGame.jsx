@@ -178,6 +178,7 @@ export class MatchingGame extends React.Component {
                 to={`w${lineto}`} 
                 key={index} 
                 borderWidth={10}
+                borderColor='#663333'
               />)
             }
             <div className='matching-game-image-container'>
