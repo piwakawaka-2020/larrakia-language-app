@@ -7,9 +7,9 @@ import ProgressBar from './ProgressBar'
 import MatchingGameImage from './MatchingGameImage'
 import MatchingGameWord from './MatchingGameWord'
 import WinScreen from './WinScreen'
-import MatchingGameLine from './MatchingGameLine'
 import HowToPlay from './HowToPlay'
 import HomeButton from './HomeButton'
+import LineTo from 'react-lineto'
 
 export class MatchingGame extends React.Component {
 
@@ -21,7 +21,6 @@ export class MatchingGame extends React.Component {
     selectedImage: "a",
     selectedWord: "b",
     completedPairs: [],
-    lines: [],
     lastSoundPlayed: (new Date()).getTime()
   }
 
@@ -93,31 +92,7 @@ export class MatchingGame extends React.Component {
       currentScore: this.state.currentScore + 1,
       completedPairs: [...this.state.completedPairs, id]
     }) 
-    this.drawLine(id)
     this.checkHasSound(id)
-  }
-
-  // draws line between correct items
-  drawLine(id) {
-    // get 1st element by id
-    const element1 = document.getElementById(`i${id}`)
-    // get 2nd element by id
-    const element2 = document.getElementById(`w${id}`)
-    // get x/y coords for 1st element
-    const element1Coord = element1.getBoundingClientRect()
-    // get x/y coords for 2nd element
-    const element2Coord = element2.getBoundingClientRect()
-    // create obj with nessacery details
-    const lineObj = {
-      x1: element1Coord.x -468,
-      y1: element1Coord.y,
-      x2: element2Coord.x -200,
-      y2: element2Coord.y,
-    }
-    // push to state 
-    this.setState({
-      lines: [...this.state.lines, lineObj]
-    })
   }
 
   // checks if word has sound
@@ -158,18 +133,16 @@ export class MatchingGame extends React.Component {
           </HowToPlay>
           <h1 className='matching-game-title'><strong>Matching Game</strong></h1>
           <div className='matching-game-container'>
-            <svg width={750} height={680}>
-              {
-                this.state.lines.map((line, index) => 
-                <MatchingGameLine 
-                  key={index}
-                  x1={line.x1}
-                  y1={line.y1}
-                  x2={line.x2}
-                  y2={line.y2}
-                />)
-              }
-            </svg>
+            {
+              this.state.completedPairs.map((lineto, index) => 
+              <LineTo 
+                from={`i${lineto}`} 
+                to={`w${lineto}`} 
+                key={index} 
+                borderWidth={10}
+                borderColor='#663333'
+              />)
+            }
             <div className='matching-game-image-container'>
               {
                 this.state.imageList.map(listItem => 
